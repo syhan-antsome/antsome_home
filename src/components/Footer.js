@@ -4,8 +4,10 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { makeStyles } from '@mui/styles';
+import Image from 'next/image';
 
 import Link from 'src/components/Link';
+import logo_gPng from "/public/images/logos/logo_g.png";
 
 const useStyles = makeStyles(theme => ({
   foot_text: {
@@ -23,7 +25,7 @@ export default function Footer() {
     <Box style={{ width: "100%", textAlign: "-webkit-center" }}>
       {/* 앤트썸 선 */}
       <Stack direction="row" spacing={0}>
-        <Box elevation={0} square style={{ width: "50%" }}
+        <Box elevation={0} style={{ width: "50%" }}
           sx={{
             height: { xs: 45, sm: 62, md: 103 },
             background: { xs: "url('/images/sun/sun_ml.png')", sm: "url('/images/sun/sun_tl.png')", md: "url('/images/sun/sun_wl.png')" },
@@ -38,7 +40,7 @@ export default function Footer() {
           maxWidth: { xs: "376px", sm: "1025px", md: "1401px" },
           background: { xs: "url('/images/sun/sun_m.png')", sm: "url('/images/sun/sun_t.png')", md: "url('/images/sun/sun_w.png')" },
         }}></Box>
-        <Box elevation={0} square style={{ width: "50%" }}
+        <Box elevation={0} style={{ width: "50%" }}
           sx={{
             height: { xs: 45, sm: 62, md: 103 },
             background: { xs: "url('/images/sun/sun_mr.png')", sm: "url('/images/sun/sun_tr.png')", md: "url('/images/sun/sun_wr.png')" },
@@ -87,7 +89,7 @@ export default function Footer() {
         textAlign: { xs: "center", sm: "left", md: "left" },
         height: { xs: "15px", sm: "25px", md: "37px" }
       }}>
-        <img src="/images/logo_g.png" height="100%" alt="antsome" />
+        <Image src={logo_gPng} height="100%" alt="antsome" />
       </Box>
 
       <Box style={{ color: "#707070", }} sx={{

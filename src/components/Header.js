@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import Image from 'next/image';
 
 import Box from '@mui/material/Box';
 
@@ -15,6 +16,9 @@ import Stack from '@mui/material/Stack';
 import Link from 'src/components/Link';
 
 import CancelIcon from '@mui/icons-material/Cancel';
+
+import logo_wPng from "/public/images/logos/logo_w.png";
+import logo_bPng from "/public/images/logos/logo_b.png";
 
 const AntSmMenuBlackButton = styled(Button)`
   color: #000;
@@ -232,10 +236,10 @@ export default function Header(props) {
               width: { xs: "100px", sm: "180px", md: "265px" }
             }}><Link href="/" color="primary">
                 {isWhite &&
-                  <img src="/images/logo_w.png" alt="antsome" width="100%" />
+                  <Image src={logo_wPng} alt="antsome" width="100%" />
                 }
                 {!isWhite &&
-                  <img src="/images/logo_b.png" alt="antsome" width="100%" />
+                  <Image src={logo_bPng} alt="antsome" width="100%" />
                 }
               </Link>
             </Box>

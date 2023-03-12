@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
-import { styled } from '@mui/material/styles';
 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -132,24 +131,24 @@ export default function Index() {
   return (
     <Box style={{ width: "100%", textAlign: "-webkit-center" }}>
       {/* video area */}
-      <Paper elevation={0} style={{ border: 0 }} square variaznt='outlined'
+      <Paper elevation={0} style={{ border: 0 }} variaznt='outlined'
         sx={{ display: { xs: 'block', sm: 'none' } }}>
         <video style={{ width: '100%' }} playsInline autoPlay muted loop>
-          <source src="/videos/banner_mobile.mp4" />
+          <source src="videos/banner_mobile.mp4" />
           Your browser does not support the video tag.
         </video>
       </Paper>
-      <Paper elevation={0} style={{ border: 0 }} square variaznt='outlined'
+      <Paper elevation={0} style={{ border: 0 }} variaznt='outlined'
         sx={{ display: { xs: 'none', sm: 'block', md: 'none' } }}>
         <video style={{ width: '100%' }} playsInline autoPlay muted loop>
-          <source src="/videos/banner_tablet.mp4" />
+          <source src="videos/banner_tablet.mp4" />
           Your browser does not support the video tag.
         </video>
       </Paper>
-      <Paper elevation={0} style={{ border: 0 }} square variaznt='outlined'
+      <Paper elevation={0} style={{ border: 0 }} variaznt='outlined'
         sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
         <video style={{ width: '100%' }} playsInline autoPlay muted loop>
-          <source src="/videos/banner_web.mp4" />
+          <source src="videos/banner_web.mp4" />
           Your browser does not support the video tag.
         </video>
       </Paper>
