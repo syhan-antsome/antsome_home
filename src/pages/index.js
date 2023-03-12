@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@mui/styles';
 import { styled } from '@mui/material/styles';
 
 import Typography from '@mui/material/Typography';
@@ -8,7 +9,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-import Link from '../src/Link';
+import Link from 'src/components/Link';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -17,13 +18,55 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Header from '../src/components/Header';
-import Footer from '../src/components/Footer';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 import Image from 'next/image';
+
+import iotPng from "public/images/iot.png";
+import o2oPng from "public/images/o2o.png";
+import socialPng from "public/images/social.png";
+
+import project01_mPng from "public/images/projects/project01_m.png";
+import project02_mPng from "public/images/projects/project02_m.png";
+import project03_mPng from "public/images/projects/project03_m.png";
+import project04_mPng from "public/images/projects/project04_m.png";
+
+import project01_tPng from "public/images/projects/project01_t.png";
+import project02_tPng from "public/images/projects/project02_t.png";
+import project03_tPng from "public/images/projects/project03_t.png";
+import project04_tPng from "public/images/projects/project04_t.png";
+
+import project01_wPng from "public/images/projects/project01_w.png";
+import project02_wPng from "public/images/projects/project02_w.png";
+import project03_wPng from "public/images/projects/project03_w.png";
+import project04_wPng from "public/images/projects/project04_w.png";
+
+import culture01Png from "public/images/culture/culture01.png";
+import culture02Png from "public/images/culture/culture02.png";
+import culture03Png from "public/images/culture/culture03.png";
+import culture04Png from "public/images/culture/culture04.png";
+import culture05Png from "public/images/culture/culture05.png";
+
+import mapPng from "public/images/map.png";
+
+const useStyles = makeStyles(theme => ({
+  index_button: {
+    border: '2px solid #ffffff',
+    color: '#fff',
+    fontWeight: '700',
+    backgroundColor: '#fff0',
+    textAlign: 'center',
+    borderRadius: '46px',
+    '&:hover': {
+      backgroundColor: '#ffffff',
+      color: '#0C254B'
+    }
+  },
+}));
 
 const getFuncCard = (pImg, pTitle, pContent) => {
   return <Paper elevation={0} style={{ textAlign: "-webkit-center" }}>
-    <Image src={pImg} alt="IOT" />
+    <Image src={pImg} alt={pTitle} />
     <div style={{
       marginTop: 28,
       fontSize: "30px",
@@ -45,27 +88,29 @@ const getFuncCard = (pImg, pTitle, pContent) => {
   </Paper>
 }
 
-const cultureMedia = ["/images/culture/culture01.png",
-  "/images/culture/culture02.png",
-  "/images/culture/culture03.png",
-  "/images/culture/culture04.png",
-  "/images/culture/culture05.png"];
+const cultureMedia = [
+  culture01Png,
+  culture02Png,
+  culture03Png,
+  culture04Png,
+  culture05Png
+];
 
-const IndexButton = styled(Button)`
-  border: 2px solid #ffffff;
-  color: #fff;
-  font-weight: 700;
-  background-color: #fff0;
-  text-align: center;
-  border-radius: 46px;
-  &:hover {
-    background-color: #ffffff;
-    color: #0C254B;
-  };
-  `;
+// const IndexButton = styled(Button)`
+//   border: 2px solid #ffffff;
+//   color: #fff;
+//   font-weight: 700;
+//   background-color: #fff0;
+//   text-align: center;
+//   border-radius: 46px;
+//   &:hover {
+//     background-color: #ffffff;
+//     color: #0C254B;
+//   };
+//   `;
 
 export default function Index() {
-
+  const classes = useStyles();
   const [cultureEmblaRef, cultureEmblaApi] = useEmblaCarousel({
     slidesToScroll: 1, loop: true, speed: 2
   }, [
@@ -133,13 +178,13 @@ export default function Index() {
         {/* technologies by antsome  */}
         <Grid container spacing={4} direction="row" justifyContent="space-around" alignItems="flex-start">
           <Grid item xs={12} sm={4}>
-            {getFuncCard("/images/iot.png", "IOT", ["인터넷을 기반으로 모든 사물을", "블루투스와 근거리무선통신(NFC) 등으로 연결하여", "상호 소통하는 지능형 기술 및 서비스"])}
+            {getFuncCard(iotPng, "IOT", ["인터넷을 기반으로 모든 사물을", "블루투스와 근거리무선통신(NFC) 등으로 연결하여", "상호 소통하는 지능형 기술 및 서비스"])}
           </Grid>
           <Grid item xs={12} sm={4}>
-            {getFuncCard("/images/o2o.png", "O2O", ["온라인 플랫폼을 통해 실제로 오프라인에서 일어나는", "소비자와 판매처 간의 비즈니스 연결을", "가능하게 하는 기술 및 서비스"])}
+            {getFuncCard(o2oPng, "O2O", ["온라인 플랫폼을 통해 실제로 오프라인에서 일어나는", "소비자와 판매처 간의 비즈니스 연결을", "가능하게 하는 기술 및 서비스"])}
           </Grid>
           <Grid item xs={12} sm={4}>
-            {getFuncCard("/images/social.png", "Social", ["사용자 간의 자유로운 의사소통과", "정보 공유를 통해 사회적 관계를 형성하고", "강화해주는 온라인 플랫폼"])}
+            {getFuncCard(socialPng, "Social", ["사용자 간의 자유로운 의사소통과", "정보 공유를 통해 사회적 관계를 형성하고", "강화해주는 온라인 플랫폼"])}
           </Grid>
         </Grid>
       </Box>
@@ -156,11 +201,11 @@ export default function Index() {
             width: "100%", height: "100%", position: "absolute",
             fontSize: "40px", fontWeight: 700, zIndex: 99, color: "#fff", top: "400px",
           }}>PROJECTS<br />
-            <IndexButton style={{
+            <Button className={classes.index_button} style={{
               textTransform: "lowercase",
               width: "120px", height: "48px",
               fontSize: "20px", padding: "13px 0",
-            }} component={Link} noLinkStyle href="/projects">more</IndexButton>
+            }} component={Link} noLinkStyle href="/projects">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -192,10 +237,10 @@ export default function Index() {
               afterChange: (current) => { setProjectMNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src="/images/projects/project01_m.png" alt="project01" />
-              <Image src="/images/projects/project02_m.png" alt="project02" />
-              <Image src="/images/projects/project03_m.png" alt="project03" />
-              <Image src="/images/projects/project04_m.png" alt="project04" />
+              <Image src={project01_mPng} alt="project01" />
+              <Image src={project02_mPng} alt="project02" />
+              <Image src={project03_mPng} alt="project03" />
+              <Image src={project04_mPng} alt="project04" />
             </Slider>
           </Box>
         </Box>
@@ -204,11 +249,11 @@ export default function Index() {
             width: "90%", height: "100%", position: "absolute",
             fontSize: "60px", fontWeight: 700, zIndex: 99, color: "#fff", top: "400px",
           }}>PROJECTS<br />
-            <IndexButton style={{
+            <Button className={classes.index_button} style={{
               textTransform: "lowercase",
               width: "120px", height: "48px",
               fontSize: "20px", padding: "13px 0",
-            }} component={Link} noLinkStyle href="/projects">more</IndexButton>
+            }} component={Link} noLinkStyle href="/projects">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -240,10 +285,10 @@ export default function Index() {
               afterChange: (current) => { setProjectTNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src="/images/projects/project01_t.png" alt="project01" />
-              <Image src="/images/projects/project02_t.png" alt="project02" />
-              <Image src="/images/projects/project03_t.png" alt="project03" />
-              <Image src="/images/projects/project04_t.png" alt="project04" />
+              <Image src={project01_tPng} alt="project01" />
+              <Image src={project02_tPng} alt="project02" />
+              <Image src={project03_tPng} alt="project03" />
+              <Image src={project04_tPng} alt="project04" />
             </Slider>
           </Box>
         </Box>
@@ -252,12 +297,12 @@ export default function Index() {
             width: "100%", height: "100%", position: "absolute",
             fontSize: "90px", fontWeight: 900, zIndex: 99, color: "#fff", top: "300px",
           }}>PROJECTS<br />
-            <IndexButton style={{ textTransform: "lowercase" }} sx={{
+            <Button className={classes.index_button} style={{ textTransform: "lowercase" }} sx={{
               width: { xs: "89px", sm: "119px", md: "180px" },
               height: { xs: "35px", sm: "47px", md: "70px" },
               fontSize: { xs: "12px", sm: "16px", md: "26px" },
               padding: { xs: "16px 0", sm: "13px 22px 10px 22px", md: "12px 30px 10px 30px" },
-            }} component={Link} noLinkStyle href="/projects">more</IndexButton>
+            }} component={Link} noLinkStyle href="/projects">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -289,10 +334,10 @@ export default function Index() {
               afterChange: (current) => { setProjectWNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src="/images/projects/project01_w.png" alt="project01" />
-              <Image src="/images/projects/project02_w.png" alt="project02" />
-              <Image src="/images/projects/project03_w.png" alt="project03" />
-              <Image src="/images/projects/project04_w.png" alt="project04" />
+              <Image src={project01_wPng} alt="project01" />
+              <Image src={project02_wPng} alt="project02" />
+              <Image src={project03_wPng} alt="project03" />
+              <Image src={project04_wPng} alt="project04" />
             </Slider>
           </Box>
         </Box>
@@ -356,7 +401,7 @@ export default function Index() {
                 maxWidth: { xs: "335px", sm: "550px", md: "700px" },
                 marginTop: { xs: "80px", sm: "142px", md: "150px" }
               }}>
-                <Image src="images/map.png" alt="약도" width="100%" />
+                <Image src={mapPng} alt="약도" width="100%" />
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -424,12 +469,12 @@ export default function Index() {
               sx={{
                 marginTop: { xs: "27px", sm: "39px", md: "52px" },
               }}>
-              <IndexButton style={{ textTransform: "lowercase" }} sx={{
+              <Button className={classes.index_button} style={{ textTransform: "lowercase" }} sx={{
                 width: { xs: "89px", sm: "119px", md: "180px" },
                 height: { xs: "35px", sm: "47px", md: "70px" },
                 fontSize: { xs: "12px", sm: "16px", md: "26px" },
                 padding: { xs: "16px 0", sm: "13px 22px 10px 22px", md: "12px 30px 10px 30px" },
-              }} component={Link} noLinkStyle href="/contactus">문의하기</IndexButton>
+              }} component={Link} noLinkStyle href="/contactus">문의하기</Button>
             </Box>
           </Box>
           <Box style={{ backgroundColor: "#00327E", borderRadius: 30, textAlign: "-webkit-left" }}
@@ -455,12 +500,12 @@ export default function Index() {
               sx={{
                 marginTop: { xs: "27px", sm: "39px", md: "52px" },
               }}>
-              <IndexButton style={{ textTransform: "lowercase" }} sx={{
+              <Button className={classes.index_button} style={{ textTransform: "lowercase" }} sx={{
                 width: { xs: "89px", sm: "119px", md: "180px" },
                 height: { xs: "35px", sm: "47px", md: "70px" },
                 fontSize: { xs: "12px", sm: "16px", md: "26px" },
                 padding: { xs: "16px 0", sm: "13px 22px 10px 22px", md: "12px 30px 10px 30px" },
-              }} component={Link} noLinkStyle href="/recruit#apply">지원하기</IndexButton>
+              }} component={Link} noLinkStyle href="/recruit#apply">지원하기</Button>
             </Box>
           </Box>
         </Box>

@@ -1,0 +1,5 @@
+.button div {float: left; padding: 50px 10px 0 0;}
+.button div a {padding: 15px 30px 15px 30px; font-size: 25px; font-weight: bold; color: #0C254B; text-align: center;
+display: inline-block; border: 2px solid #0C254B; border-radius: 40px; box-sizing: border-box;}
+.button div a:hover, .button div a:active {background: #0C254B; color: #fff; font-weight: bold;}
+
