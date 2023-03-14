@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKSOME</title>
+
+
+    <!--style------------------------------------------------------------------------------------------------------------------------>
+
+    <style type="text/css">
+        
+        @font-face {
+            font-family: 'LINESeedKR-Bd';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        /* main style */
+
+        * {margin: 0; padding: 0; font-family: 'LINESeedKR', sans-serif; list-style: none; text-decoration: none;}
+        #wrap {width: 100%; overflow: hidden;}
+        #topButton {position: fixed; right: 2%; bottom: 50px; display: none; z-index: 999;}
+        html {font-size: 10px;}
+        img {border: none; max-width: 100%;}
+        .clear {clear: both;}
+        a {color: #1F1F1F;}
+        .color {color: #6FBC89;}
+        h2 {font-family: 'LINESeedKR-Bd'; font-size: 6rem; color: #6FBC89; font-weight: bold; text-align: center; padding-top: 10%;}
+        
+
+        /* header */
+
+        header {height: 1022px; width: 100%;}
+        .banner {width: 80%; margin: 0 auto;}
+        nav {top: 2%; position: fixed; z-index: 999; display: none;}
+        .banner_left {width: 40%; margin-top: 20%; float: left;}
+        .banner_left ul {text-align: center;}
+        .banner_left ul li {margin-top: 3%;}
+        .banner_left ul li:nth-child(2) {font-size: 2.5rem; font-weight: bold; margin-top: 5%;}
+        .banner_left ul li:last-child {line-height: 150%; font-size: 2.4rem;}
+        .banner_right {width: 60%; float: right; margin-top: 5.5%;}
+
+        /* con01 */
+
+        #con01 {width: 80%; margin: 0 auto; height: 800px; margin-top: 13%;}
+        .con01_bg {position: relative; text-align: center;}
+        h3 {font-weight: bold; font-size: 4.5rem; line-height: 150%; text-align: center; position: absolute; margin-top: -6%; left: 50%; transform: translateX(-50%);}
+
+        /* con02 */
+
+        .white_cir {position: relative;}
+        .text {position: absolute; margin-top: -7.5%; padding-left: 5%;}
+        .text li:first-child {font-size: 5.0rem; font-weight: bold;}
+        .text li:nth-child(2) {font-size: 2.5rem; margin-top: 3%; line-height: 150%;}
+
+        #con02 {width: 100%; height: 3900px; background: linear-gradient(to bottom, #DFF5E5, white); border-radius: 300px 0 0 0;}
+        .con02_c {width: 80%; margin: 0 auto;}
+        .text01 {margin-top: 10%;}
+        .text02 {margin: 15% 0 0 20%;}
+        .text03 {margin: 15% 0 0 5%;}
+        .text04 {margin: 15% 0 10% 25%;}
+
+        /* con03 */
+        
+        #con03 {width: 80%; margin: 0 auto;}
+        .con03_img {text-align: center; margin-top: 6%;}
+        .con03_img_m {display: none;}
+
+        /* con04 */
+
+        #con04 {width: 80%; margin: 0 auto;}
+        .con04_img {text-align: center;}
+        .con04_img2 {text-align: center; margin-top: 10%;}
+        #con04 ul {text-align: center;}
+        #con04 ul li:first-child {font-size: 4.0rem; font-weight: bold; margin-top: 5%;}
+        #con04 ul li:nth-child(2) {font-size: 2.5rem; margin-top: 3%; line-height: 150%;}
+        #con04 ul li:last-child {font-size: 3.0rem; margin-top: 5%; line-height: 200%;}
+
+        /* con05 */
+
+        #con05 {width: 100%; height: 1200px; margin-top: 10%; background-color: #EDFAF1;}
+        #con05 p {font-size: 2.5rem; text-align: center; line-height: 150%;}
+        .con05_t {text-align: center; margin-top: 3%;}
+        .con05_t li:first-child {font-size: 3.0rem;}
+        .con05_t li:nth-child(2) {font-size: 4.0rem; font-weight: bold; color: #3B9A50; margin-top: 0.5%;}
+        .con05_t li:last-child {font-size: 2.5rem; margin-top: 1%;}
+
+        .con05_list {width: 100%; margin: 0 auto; display: flex; justify-content: center;}
+        .con05_item {text-align: center; margin: 4% 2%;}
+        .con05_item li:last-child {font-size: 2.5rem; margin-top: 10%; line-height: 150%;}
+
+        /* con06 */
+
+        #con06 {width: 100%; margin: 0 auto; height: 1400px; margin-top: 5%; background-image: url('images/con06_bg.png'); background-repeat: no-repeat; background-position: 20%; background-size: contain;}
+        .con06_txt {text-align: center;}
+        .con06_txt li:first-child {position: relative; margin-left: -29%;}
+        .con06_txt li:nth-child(2) {font-size: 4.0rem; font-weight: bold; position: absolute; margin: -3.5% 0 0 35%;}
+        .con06_txt li:last-child {font-size: 2.5rem; margin-top: 1%; line-height: 170%;}
+        .con06_img {margin-top: 10%; text-align: center;}
+
+        /* con07 */
+
+        #con07 {width: 100%; height: 1100px; background-color: #EDFAF1;}
+        .con07_b {width: 80%; margin: 0 auto;}
+        .con07_img {width: 20%; padding-top: 7%; float: left; margin-right: 7%; text-align: center; position: absolute;}
+        .con07_txt {padding-top: 30%; margin-left: 40%;}
+        .con07_txt li:first-child {position: relative; margin-left: -4.5%;}
+        .con07_txt li:nth-child(2) {font-size: 4.0rem; font-weight: bold; position: absolute; margin: -3.5% 0 0 0%;}
+        .con07_txt li:last-child {font-size: 2.5rem; margin-top: 1%; line-height: 170%;}
+
+        /* con08 */
+
+        #con08 {width: 100%; margin: 0 auto; height: 1500px; margin-top: 10%;}
+        .con08_txt {text-align: center;}
+        .con08_txt li:first-child {position: relative; margin-left: -31%;}
+        .con08_txt li:nth-child(2) {font-size: 4.0rem; font-weight: bold; position: absolute; margin: -3.5% 0 0 34%;}
+        .con08_txt li:last-child {font-size: 2.5rem; margin-top: 1%; line-height: 170%;}
+        .con08_img {margin-top: 7%; text-align: center; margin-left: -5%;}
+        .con08_img_m {display: none;}
+
+        /* con09 */
+        
+        #con09 {width: 100%; height: 1500px; background-color: #EDFAF1;}
+        .con09_b {width: 80%; margin: 0 auto;}
+        .con09_txt {padding-top: 10%; text-align: center;}
+        .con09_txt li:first-child {position: relative; margin-left: -32%;}
+        .con09_txt li:nth-child(2) {font-size: 4.0rem; font-weight: bold; position: absolute; margin: -3.5% 0 0 26.5%;}
+        .con09_txt li:last-child {font-size: 2.5rem; margin-top: 1%; line-height: 170%;}
+        .con09_img {padding-top: 8%; text-align: center;}
+        .con09_img_m {display: none;}
+
+        /* con10 */
+
+        #con10 {width: 80%; height: 1100px; margin: 0 auto;}
+        .con10_txt {text-align: right; float: left; padding-top: 25%;}
+        .con10_txt li:first-child {position: relative; margin-right: -4%;}
+        .con10_txt li:nth-child(2) {font-size: 4.0rem; font-weight: bold; position: absolute; margin: -3.5% 0 0 29%;}
+        .con10_txt li:last-child {font-size: 2.5rem; margin-top: 1%; line-height: 170%;}
+        .con10_img {float: right; width: 28%; margin-top: 10%;}
+
+        /* con11 */
+
+        #con11 {width: 100%; height: 1100px; background-color: #EDFAF1;}
+        .con11_b {width: 80%; margin: 0 auto;}
+        .con11_img {width: 28%; padding-top: 10%; float: left; margin-right: 5%; text-align: center; position: absolute;}
+        .con11_txt {padding-top: 33%; margin-left: 38%;}
+        .con11_txt li:first-child {position: relative; margin-left: -4.5%;}
+        .con11_txt li:nth-child(2) {font-size: 4.0rem; font-weight: bold; position: absolute; margin: -3.5% 0 0 0%;}
+        .con11_txt li:last-child {font-size: 2.5rem; margin-top: 1%; line-height: 170%;}
+
+        /* con12 */
+
+        #con12 {width: 750px; height: 400px; margin: 0 auto;}
+        h4 {font-size: 6.0rem; color: #3B9A50; text-align: center; padding-top: 20%; float: left;}
+        .cha {float: right; padding-top: 19%;}
+
+        /* footer */
+
+        footer {width: 100%; height: 300px; background: #414141;}
+        #foot {width: 80%; margin: 0 auto;}
+        h5 {margin-top: 4%; font-size: 20px; color: #fff; padding-top: 80px;}
+        .info {margin-top: 2%; color: #B2B2B2; font-size: 15px;}
+        .info li:first-child {line-height: 180%;}
+        .info li {padding-top: 0.5%;}
+        .info li a {color: #fff; font-weight: bold;}
+        .info li a:hover {font-weight: bold; color: #4434F0;}
+
+        #foot_m {display: none;}
+
+        /* --------------------------------------------------- 반응형 ---------------------------------------------------------------------------*/
+        @media screen and (min-width:992px) and (max-width: 1199px) { /*테블릿 가로*/
+
+            #topButton {width: 8%; height: auto;}
+            h2 {font-size: 4rem;}
+    
+            /* header */
+
+            header {height: 750px;}
+            nav {width: 20%;}
+            .banner_left {margin-top: 24%;}
+            .banner_left {width: 35%;}
+            .banner_left ul li:nth-child(2) {font-size: 2rem;}
+            .banner_left ul li:last-child {font-size: 1.8rem;}
+
+            /* con01 */
+
+            #con01 {height: 500px; margin-top: 8%;}
+            .con01_bg {width: 55%; margin: 0 auto;}
+            h3 {font-size: 3rem; margin-top: -6%;}
+
+            /* con02 */
+
+            .white_cir {width: 15%;}
+            .text {margin-top: -7%;}
+            .text li:first-child {font-size: 3rem;}
+            .text li:nth-child(2) {font-size: 1.8rem;}
+
+            #con02 {height: 2500px; border-radius: 170px 0 0 0;}
+            .text02 {margin: 15% 0 0 10%;}
+            .text03 {margin: 15% 0 0 3%;}
+            .text04 {margin: 15% 0 10% 15%;}
+
+            /* con03 */
+        
+            .con03_img_m {display: none;}
+
+            /* con04 */
+
+            .con04_img2 {width: 40%; margin: 0 auto; margin-top: 10%;}
+            #con04 ul li:first-child {font-size: 3rem;}
+            #con04 ul li:nth-child(2) {font-size: 2rem;}
+            #con04 ul li:last-child {font-size: 2rem;}
+
+            /* con05 */
+
+            #con05 {height: 800px;}
+            #con05 p {font-size: 1.8rem;}
+            .con05_t li:first-child {font-size: 2.5rem;}
+            .con05_t li:nth-child(2) {font-size: 3rem;}
+            .con05_t li:last-child {font-size: 1.8rem;}
+
+            .con05_list {width: 80%;}
+            .con05_item li:last-child {font-size: 1.8rem;}
+
+            /* con06 */
+
+            #con06 {height: 1000px; background-position: 40%;}
+            .con06_txt {text-align: center; padding-top: 3%;}
+            .con06_txt li:first-child {width: 6%; margin-left: 30%;}
+            .con06_txt li:nth-child(2) {font-size: 3rem; margin: -4.5% 0 0 32%;}
+            .con06_txt li:last-child {font-size: 2rem;}
+            .con06_img {width: 25%; margin: 0 auto; margin-top: 10%;}
+
+            /* con07 */
+
+            #con07 {height: 850px;}
+            .con07_img {margin-right: 7%; width: 25%; padding-top: 10%;}
+            .con07_txt {padding-top: 30%; margin-left: 40%;}
+            .con07_txt li:first-child {width: 13%; margin-left: -4.5%;}
+            .con07_txt li:nth-child(2) {font-size: 3rem; margin: -4.5% 0 0 0%;}
+            .con07_txt li:last-child {font-size: 2rem;}
+
+            /* con08 */
+
+            #con08 {height: 1100px; margin-top: 8%;}
+            .con08_txt li:first-child {margin-left: 29%; width: 6%;}
+            .con08_txt li:nth-child(2) {font-size: 3rem; margin: -4.4% 0 0 32%;}
+            .con08_txt li:last-child {font-size: 2rem;}
+            .con08_img {width: 90%; margin: 0 auto; margin-top: 7%; margin-left: 0.5%;}
+            .con08_img_m {display: none;}
+
+            /* con09 */
+        
+            #con09 {height: 1080px;}
+            .con09_b {width: 80%; margin: 0 auto;}
+            .con09_txt {padding-top: 8%;}
+            .con09_txt li:first-child {width: 8%; margin-left: 26.5%;}
+            .con09_txt li:nth-child(2) {font-size: 3rem; margin: -4.5% 0 0 24%;}
+            .con09_txt li:last-child {font-size: 2rem;}
+
+            /* con10 */
+
+            #con10 {height: 850px;}
+            .con10_txt {padding-top: 25%; width: 55%;}
+            .con10_txt li:first-child {margin-left: 91%; width: 15%;}
+            .con10_txt li:nth-child(2) {font-size: 3rem;margin: -4.5% 0 0 18.5%;}
+            .con10_txt li:last-child {font-size: 2rem;}
+            .con10_img {width: 33%;}
+
+            /* con11 */
+
+            #con11 {height: 900px;}
+            .con11_img {width: 28%; padding-top: 8%; margin-right: 5%;}
+            .con11_txt {padding-top: 33%; margin-left: 45%;}
+            .con11_txt li:first-child {width: 13%; margin-left: -5%;}
+            .con11_txt li:nth-child(2) {font-size: 3rem; margin: -4.5% 0 0 0%;}
+            .con11_txt li:last-child {font-size: 2rem;}
+
+            /* con12 */
+
+            #con12 {width: 620px; height: 300px;}
+            h4 {font-size: 5rem; padding-top: 20%;}
+            .cha {padding-top: 19%;}
+
+            /* footer */
+
+            footer {height: 280px;}
+            h5 {margin-top: 6%; font-size: 2rem;}
+            .info {font-size: 1.8rem;}
+        }
+
+        @media screen and (max-width: 991px) { /*테블릿 세로*/
+
+            h2 {font-size: 3rem; padding-top: 15%;}
+
+            /* header */
+
+            header {height: 500px;}
+            nav {width: 20%;}
+            .banner_left {margin-top: 26%;}
+            .banner_left ul li:nth-child(2) {font-size: 1.8rem;}
+            .banner_left ul li:last-child {font-size: 1.5rem;}
+
+            /* con01 */
+
+            #con01 {height: 350px; margin-top: 3%;}
+            .con01_bg {width: 60%; margin: 0 auto;}
+            h3 {font-size: 3rem; margin-top: -6%;}
+
+            /* con02 */
+
+            .white_cir {width: 13%;}
+            .text {margin-top: -7%;}
+            .text li:first-child {font-size: 2.5rem;}
+            .text li:nth-child(2) {font-size: 1.5rem;}
+
+            #con02 {height: 2000px; border-radius: 100px 0 0 0;}
+            .text02 {margin: 20% 0 0 0;}
+            .text03 {margin: 20% 0 0 0;}
+            .text04 {margin: 20% 0 10% 0;}
+
+            /* con03 */
+        
+            .con03_img {margin-top: 10%;}
+            .con03_img_m {display: none;}
+
+            /* con04 */
+
+            .con04_img {width: 3%; margin: 0 auto; margin-bottom: 20%;}
+            .con04_img2 {width: 40%; margin: 0 auto; margin-top: 10%;}
+            #con04 ul li:first-child {font-size: 2.4rem;}
+            #con04 ul li:nth-child(2) {font-size: 1.8rem;}
+            #con04 ul li:last-child {font-size: 1.8rem; margin-bottom: 20%;}
+            /* con05 */
+
+            #con05 {height: 730px;}
+            #con05 p {font-size: 1.8rem; margin-top: 5%;}
+            .con05_t li:first-child {font-size: 2.5rem;}
+            .con05_t li:nth-child(2) {font-size: 3rem;}
+            .con05_t li:last-child {font-size: 1.8rem;}
+
+            .con05_list {width: 80%; margin-top: 8%;}
+            .con05_item li:last-child {font-size: 1.8rem;}
+
+            /* con06 */
+
+            #con06 {height: 1150px; background-position: 40%;}
+            .con06_txt {text-align: center; padding-top: 10%;}
+            .con06_txt li:first-child {width: 8%; margin-left: 21%;}
+            .con06_txt li:nth-child(2) {font-size: 3rem; margin: -6% 0 0 24%;}
+            .con06_txt li:last-child {font-size: 2rem;}
+            .con06_img {width: 40%; margin: 0 auto; margin-top: 10%;}
+
+            /* con07 */
+
+            #con07 {height: 1400px;}
+            .con07_img {width: 50%; display: block; margin: 45% 0 0 15%;}
+            .con07_txt {width: 100%; text-align: center; margin: 0 auto; padding-top: 15%;}
+            .con07_txt li:first-child {width: 13%; margin-left: 7%;}
+            .con07_txt li:nth-child(2) {font-size: 3rem; margin: -7% 0 0 10%;}
+            .con07_txt li:last-child {font-size: 2rem;}
+
+            /* con08 */
+
+            #con08 {height: 1150px; margin-top: 8%;} 
+            .con08_txt {padding-top: 8%;}
+            .con08_txt li:first-child {margin-left: 18%; width: 9%;}
+            .con08_txt li:nth-child(2) {font-size: 3rem; margin: -6.5% 0 0 22%;}
+            .con08_txt li:last-child {font-size: 2rem;}
+            .con08_img {width: 100%; margin: 0 auto; margin-top: 15%; margin-left: -3%;}
+            .con08_img_m {display: none;}
+
+            /* con09 */
+        
+            #con09 {height: 2600px;}
+            .con09_b {width: 80%; margin: 0 auto;}
+            .con09_txt {padding-top: 15%;}
+            .con09_txt li:first-child {width: 13%; margin-left: 15.5%;}
+            .con09_txt li:nth-child(2) {font-size: 3rem; margin: -7% 0 0 17%;}
+            .con09_txt li:last-child {font-size: 2rem;}
+            .con09_img {display: none;}
+            .con09_img_m {display: block; width: 60%; margin: 0 auto; margin-top: 10%;}
+
+            /* con10 */
+
+            #con10 {height: 1300px;}
+            .con10_txt {text-align: center; margin: 0 auto; padding-top: 15%;}
+            .con10_txt li:first-child {margin-left: 21%; width: 13%;}
+            .con10_txt li:nth-child(2) {font-size: 3rem; margin: -7% 0 0 22%;}
+            .con10_txt li:last-child {font-size: 2rem;}
+            .con10_img {width: 60%; padding-top: 8%; display: block; margin: 0 19% 20% 0;}
+
+            /* con11 */
+
+            #con11 {height: 1300px;}
+            .con11_img {width: 50%; padding-top: 45%; display: block; left: 24%;}
+            .con11_txt {text-align: center; margin: 0 auto; padding-top: 15%;}
+            .con11_txt li:first-child {width: 13%; margin-left: 13%;}
+            .con11_txt li:nth-child(2) {font-size: 3rem; margin: -7% 0 0 16%;}
+            .con11_txt li:last-child {font-size: 2rem;}
+
+            /* con12 */
+
+            #con12 {width: 620px; height: 300px;}
+            h4 {font-size: 5rem; padding-top: 20%;}
+            .cha {padding-top: 19%;}
+
+            /* footer */
+
+            footer {height: 220px;}
+            h5 {padding-top: 55px; font-size: 2rem; }
+            .info {font-size: 1.5rem;}
+        }
+
+        @media screen and (max-width: 767px) { /*모바일*/
+
+            #topButton {visibility: hidden;}
+
+            h2 {font-size: 2.2rem; padding-top: 15%;}
+
+            /* header */
+
+            header {height: 800px;}
+            nav {width: 30%;}
+            .banner_left {margin-top: 26%; display: block; width: 75%; margin: 40% 0 0 13%;}
+            .banner_left ul li:nth-child(2) {font-size: 1.8rem;}
+            .banner_left ul li:last-child {font-size: 1.5rem;}
+            .banner_right {width: 100%; display: block; margin-top: 40%;}
+
+            /* con01 */
+
+            #con01 {height: 650px; margin-top: 60%;}
+            .con01_bg {width: 100%; margin: 0 auto;}
+            h3 {font-size: 2.4rem; margin-top: -6%; left: 15%; transform: translateX(0%);}
+
+            /* con02 */
+
+            .white_cir {width: 15%;}
+            .text {width: 80%; margin: 0 auto;  margin-top: -9%;}
+            .text li:first-child {font-size: 2rem;}
+            .text li:nth-child(2) {font-size: 1.2rem;}
+
+            #con02 {height: 2300px; border-radius: 50px 0 0 0;}
+            .text01 {margin-top: 30%;}
+            .text02 {margin: 60% 0 0 0;}
+            .text03 {margin: 60% 0 0 0;}
+            .text04 {margin: 50% 0 50% 0;}
+
+            /* con03 */
+
+            .con03_img {display: none;}
+            .con03_img_m {display: block; margin-top: 20%;}
+
+            /* con04 */
+
+            .con04_img {width: 3%; margin: 0 auto; margin-bottom: 20%;}
+            .con04_img2 {width: 60%; margin: 0 auto; margin-top: 30%;}
+            #con04 ul li:first-child {font-size: 2rem; line-height: 150%; margin-top: 20%;}
+            #con04 ul li:nth-child(2) {font-size: 1.5rem; margin-top: 10%;}
+            #con04 ul li:last-child {font-size: 1.5rem; margin-bottom: 20%; margin-top: 10%;}
+            #con04 ul li:last-child img {width: 40%;}
+
+
+            /* con05 */
+
+            #con05 {height: 1800px;}
+            #con05 p {font-size: 1.6rem; margin-top: 40%; width: 90%; margin: 0 auto;}
+            .con05_t li:first-child {font-size: 2rem; margin-top: 20%;}
+            .con05_t li:nth-child(2) {font-size: 2.5rem;}
+            .con05_t li:last-child {font-size: 1.5rem; width: 80%; margin: 0 auto; line-height: 150%; margin-top: 6%;}
+
+            .con05_list {width: 50%; margin-top: 8%; display: block; margin-top: 20%;}
+            .con05_item li:last-child {font-size: 2rem; margin-bottom: 20%;}
+
+            /* con06 */
+
+            #con06 {height: 1100px; background-position: 40%;}
+            .con06_txt {text-align: center; padding-top: 25%;}
+            .con06_txt li:first-child {width: 10%; margin-left: 9%;}
+            .con06_txt li:nth-child(2) {font-size: 2.2rem; margin: -8% 0 0 11%;}
+            .con06_txt li:last-child {font-size: 1.5rem;}
+            .con06_img {width: 80%; margin: 0 auto; margin-top: 25%;}
+
+            /* con07 */
+
+            #con07 {height: 1150px;}
+            .con07_img {width: 80%; display: block; margin: 70% 0 0 0;}
+            .con07_txt {width: 100%; text-align: center; margin: 0 auto; padding-top: 25%;}
+            .con07_txt li:first-child {width: 13%; margin-left: -7%;}
+            .con07_txt li:nth-child(2) {font-size: 2.2rem; margin: -8% 0 0 -2%;}
+            .con07_txt li:last-child {font-size: 1.5rem;}
+
+            /* con08 */
+
+            #con08 {height: 1100px; margin-top: 20%;} 
+            .con08_txt {padding-top: 8%;}
+            .con08_txt li:first-child {margin-left: 7%; width: 9%;}
+            .con08_txt li:nth-child(2) {font-size: 2.2rem; margin: -8% 0 0 10%;}
+            .con08_txt li:last-child {font-size: 1.5rem;}
+            .con08_img {display: none;}
+            .con08_img_m {display: block; padding-top: 20%; width: 80%; margin: 0 auto;}
+
+            /* con09 */
+        
+            #con09 {height: 2250px;}
+            .con09_b {width: 80%; margin: 0 auto;}
+            .con09_txt {padding-top: 30%;}
+            .con09_txt li:first-child {width: 13%; margin-left: 3%;}
+            .con09_txt li:nth-child(2) {font-size: 2.2rem; margin: -8.5% 0 0 6%;}
+            .con09_txt li:last-child {font-size: 1.5rem;}
+            .con09_img {display: none;}
+            .con09_img_m {display: block; width: 100%; margin: 0 auto; margin-top: 25%;}
+
+            /* con10 */
+
+            #con10 {height: 1250px;}
+            .con10_txt {text-align: center; margin: 0 auto; padding-top: 25%;}
+            .con10_txt li:first-child {margin-left: 12%; width: 13%;}
+            .con10_txt li:nth-child(2) {font-size: 2.2rem; margin: -8.5% 0 0 14%;}
+            .con10_txt li:last-child {font-size: 1.5rem;}
+            .con10_img {width: 100%; display: block; margin: 25% 0 0 0;}
+
+            /* con11 */
+
+            #con11 {height: 1200px;}
+            .con11_img {width: 80%; padding-top: 85%; display: block; left: 10%;}
+            .con11_txt {text-align: center; margin: 0 auto; padding-top: 25%;}
+            .con11_txt li:first-child {width: 13%; margin-left: 3%;}
+            .con11_txt li:nth-child(2) {font-size: 2.2rem; margin: -8.5% 0 0 6%;}
+            .con11_txt li:last-child {font-size: 1.5rem;}
+
+            /* con12 */
+
+            #con12 {width: 300px; height: 150px; margin: 0 auto;}
+            h4 {font-size: 3rem; padding-top: 15%;}
+            .cha {display: none;}
+
+            /* footer */
+
+            #foot {display: none;}
+
+            #foot_m {display: block; width: 95%; margin: 0 auto;}
+            footer {height: 240px; text-align: left;}
+            h6 {padding-top: 50px; font-size: 1.5em; color: #fff;}
+            .info_m {font-size: 1.2rem; margin-top: 4%;}
+            .info_m li {color: #B2B2B2; line-height: 180%;}
+            .info_m li a {color: #fff; font-weight: bold;}
+            .info_m li:nth-child(2) {line-height: 150%;}
+            .info_m li:last-child {padding-top: 5%}
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <div class="banner">
+                <nav id="logo"><h1><a href="#"><img src="images/logo_small.png" alt="booksome" /></a></h1></nav>
+                <div class="banner_left">
+                    <ul>
+                        <li><img src="images/logo_big.png" alt="Booksome" /></li>
+                        <li>소셜 기반 책/독서 문화생활 서비스</li>
+                        <li>A Social-Based Book Culture<br />Technology Service BOOKSOME</li>
+                    </ul>
+                </div>
+                <div class="banner_right">
+                    <img src="images/banner.png" alt="booksome" />
+                </div>
+            </div>
+        </header>
+
+        <div class="clear"></div>
+
+        <!--contents01------->
+
+        <section id="con01">
+            <div> 
+                <div class="con01_bg"><img src="images/con01_bg.png" /></div>
+                <h3>혼자 즐기는 독서 생활에서<br />더 많은 재미와 새로운 경험을<br />할 수 있는 서비스가 있을까요?</h3>
+            </div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents02------->
+
+        <section id="con02">
+            <div class="con02_c">
+                <h2>BACKGROUND</h2>
+                <div class="text01">
+                    <p class="white_cir"><img src="images/con02_cir.png" alt="white circle" /></p>
+                    <ul class="text">
+                        <li>독서는 언제나 옳습니다!</li>
+                        <li>책을 읽는 행위는 언제든지, 어디서나, 누구에게나 옳은 일로 생각됩니다.<br />
+                            힘든 일, 난감한 일, 도움이 필요한 일 등을 겪을 때 언제나 책은 그 해답을 가지고 있다고 믿고,<br />
+                            그 책을 통해서 답을 찾고 길을 찾으려 하는 중요한 무기이며, 쓸모 있는 도구로 생각됩니다.</li>
+                    </ul>
+                </div>
+
+                <div class="text02">
+                    <p class="white_cir"><img src="images/con02_cir.png" alt="white circle" /></p>
+                    <ul class="text">
+                        <li>함께라면 충분히 가치가 있습니다.</li>
+                        <li>독서라는 것은 그 자체로 혼자 행동하고, 혼자 즐기는 행위이며,<br />
+                            이를 통해서 충분히 즐겁고 행복한 일이지만, 만약 이런 혼자만의 일을 다른 이와 함께 다양한 방식과<br />
+                            목적으로 행동한다면 혼자서는 생각하거나 경험할 수 없었던 새로운 행복과 재미, 가치를 찾을 수 있을 거라 생각합니다.</li>
+                    </ul>
+                </div>
+
+                <div class="text03">
+                    <p class="white_cir"><img src="images/con02_cir.png" alt="white circle" /></p>
+                    <ul class="text">
+                        <li>세상에 책은 너무나 많습니다!</li>
+                        <li>책을 고르는 일은 경험과 연륜에서 나오거나, 혹은 무모함에서 해답을 찾을 뿐입니다.<br />
+                            이때 다른 누군가 또는 전문 미디어가 큰 도움이 될 수 있을 거라 생각합니다.</li>
+                    </ul>
+                </div>
+                
+                <div class="text04">
+                    <p class="white_cir"><img src="images/con02_cir.png" alt="white circle" /></p>
+                    <ul class="text">
+                        <li>호기심은 관심의 원동력입니다.</li>
+                        <li>친구, 가족 그리고 낯선 이들의 독서 생활에 대한 호기심은 단순히 궁금증을 넘어 현재의 시대 상황과<br />
+                            앞으로 일어날 트렌드 등을 예측할 수 있는 좋은 원동력이 될 수 있을 거라 생각합니다.</li>
+                    </ul>
+                </div>
+
+                <!--contents03------->
+
+                <div class="con03">
+                    <h2>Pre-PERSONA</h2>
+                    <div class="con03_img"><img src="images/con03.png" alt="persona" /></div>
+                    <div class="con03_img_m"><img src="images/con03_m.png" alt="persona" /></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents04------->
+
+        <section id="con04">
+            <div class="con04_img"><img src="images/jum.png" /></div>
+            <h2>SERVICE GOAL</h2>
+            <div class="con04_img2"><img src="images/con04_cha.png" alt="북썸 캐릭터" /></div>
+            <ul >
+                <li><span class="color">함께</span>, 그리고 <span class="color">또 다른 가치</span>를 추구할 수 있는 독서 서비스가 필요해요!</li>
+                <li>독서는 연령에 상관없이 인간의 성장에 필수적인 중요한 활동입니다.<br />
+                    그러나 혼자 활동해야 하는 독서 과정이 자칫 지루하고 외롭기에 지속성이 낮아집니다.<br />
+                    이러한 문제를 극복하고 또 다른 즐거운 경험과 동기부여를 가질 수 있는 서비스가 필요합니다.</li>
+                <li>[북썸]은 재미있고 다양한 주제로 이루어진 각종 <span class="color">콘텐츠와<br />
+                    이벤트</span>를 통해 <b>꾸준한 독서생활</b>을 할 수 있는 동기부여를 제공하고자 합니다.</li>
+            </ul>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents05------->
+
+        <section id="con05">
+            <h2>KEY SERVICE</h2>
+            <ul class="con05_t">
+                <li>책과 독서의 가치를 높여주는</li>
+                <li>책 전문 소셜 모바일 서비스</li>
+                <li>독서 생활의 유익함을 넘어 다른 사람과의 소셜 활동, 다양한 주제의 오프모임을 이용할 수 있는 서비스입니다.</li>
+            </ul>
+            <div class="con05_list">
+                <ul class="con05_item">
+                    <li><img src="images/recommend.png" alt="책추천" /></li>
+                    <li>책추천</li>
+                </ul>
+                <ul class="con05_item">
+                    <li><img src="images/social.png" alt="책소셜" /></li>   
+                    <li>책소셜</li>
+                </ul>
+                <ul class="con05_item">
+                    <li><img src="images/group.png" alt="책모임" /></li>
+                    <li>책모임</li>
+                </ul>
+                <ul class="con05_item">
+                    <li><img src="images/event.png" alt="책행사" /></li>
+                    <li>책행사</li>
+                </ul>
+            </div>
+            <p>북썸은 책을 통해 많은 사람들과 함께 즐거운 이야기와 새로운 지식,<br />
+                행복한 감성들을 공유하며 <b>건전하고 올바른 사회적 가치 창조</b>를 이루려 합니다.</p>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents06------->
+
+        <section id="con06">
+            <ul class="con06_txt">
+                <li><img src="images/green_cir.png" alt="green circle" /></li>
+                <li>좋은 사람들과 행복한 독서를 즐겨요.</li>
+                <li>책을 읽은 후 가지게 되는 소중한 경험은 오래도록 기억하고 싶습니다.</li>
+            </ul>
+            <div class="con06_img"><img src="images/con06.png" alt="북썸 소셜" /></div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents07------->
+
+        <section id="con07">
+            <div class="con07_b">
+                <div class="con07_img"><img src="images/con07.gif" alt="북썸 스와이프" /></div>
+                <ul class="con07_txt">
+                    <li><img src="images/green_cir.png" alt="green circle" /></li>
+                    <li>내 취향에 맞는 책 쉽게 찾아 볼 수 있어요.</li>
+                    <li>화면을 스와이프 하여 내 취향의 책을 찾아볼 수 있어요.<br />
+                        마음에 드는 책은 찜하고, 마음에 들지 않는 책은 차단하여 내 취향의 책에 더 다가갈 수 있어요.<br />
+                        영상 사진, 글 다양한 콘텐츠로 책을 추천받을 수 있어요.<br />
+                        태그를 눌러 비슷한 장르의 추천을 받을 수 있어요.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents08------->
+        <section id="con08">
+            <ul class="con08_txt">
+                <li><img src="images/green_cir.png" alt="green circle" /></li>
+                <li>다양한 테마의 책 저희가 엄선해드려요.</li>
+                <li>다양한 장르를 추천받아 볼 수 있어요.<br />
+                    테마에 맞는 여러 가지 책을 찾아볼 수 있어요.<br />
+                    시대와 상황에 맞는 책을 추천받아 보세요.<br />
+                    화면을 드래그해 다양한 테마를 볼 수 있어요.<br />
+                    원하는 책을 선택하여 상세한 정보와 소셜 콘텐츠를 확인할 수 있어요.</li>
+            </ul>
+            <div class="con08_img"><img src="images/con08.png" alt="북썸 테마별 책추천" /></div>
+            <div class="con08_img_m"><img src="images/con08_m.png" alt="북썸 테마별 책추천" /></div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents09------->
+
+        <section id="con09">
+            <div class="con09_b">
+                <ul class="con09_txt">
+                    <li><img src="images/green_cir.png" alt="green circle" /></li>
+                    <li>함께 읽는 책은 더욱 가치가 있다.</li>
+                    <li>책을 읽는다는 것은 기본적으로 혼자서 이루어지는 활동이지만, 사람은 누구나 무언가를 같이 하고 싶은 성향이 있어요.<br />
+                        내가 재밌게 읽었던 책을 다른 사람에게 추천하고 싶거나, 같은 책을 일고 다른 생각을 한 사람이 있는지 궁금할 때<br />
+                        소모임 기능을 통해 독서의 경험을 성장시켜 보세요.</li>
+                </ul>
+                <div class="con09_img"><img src="images/con09.png" alt="북썸 책모임" /></div>
+                <div class="con09_img_m"><img src="images/con09_m.png" alt="북썸 책모임" /></div>
+            </div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents10------->
+
+        <section id="con10">
+            <ul class="con10_txt">
+                <li><img src="images/green_cir.png" alt="green circle" /></li>
+                <li>글쓰는 나의 모습, 새롭다.</li>
+                <li>글을 작성하는 일은 더 이상 전문가들만 하는 일은 아닙니다.<br />
+                    누구가 말하고 싶고 들려주고 싶은 이야기를 어디서나, 언제든지 작성할 수 있는 기능을 제공합니다.<br />
+                    글 쓰는 작업은 모바일, 태블릿, 랩톱 등 모든 환경에서 가능하며 키보드에 타이프를 하는 방식을<br />
+                    넘어 대화하는 소리로도 가능합니다.</li>
+            </ul>
+            <div class="con10_img"><img src="images/con10.png" alt="북썸 글쓰기" /></div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents11------->
+
+        <section id="con11">
+            <div class="con11_b">
+                <div class="con11_img"><img src="images/con11.png" alt="북썸 모두의 글" /></div>
+                <ul class="con11_txt">
+                    <li><img src="images/green_cir.png" alt="green circle" /></li>
+                    <li>북썸에서만 볼 수 있는 특별한 글</li>
+                    <li>나만의 공간 속에 소중한 이야기들은 플랫폼 출판을 통해 글을 사랑하는 독자들에게 전달됩니다.<br />
+                        좋아하는 작가의 아름다운 글을 읽으며 응원하고 힘이 되어 줄 수 있습니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="clear"></div>
+
+        <!--contents12------->
+
+        <section id="con12">
+            <h4>Thank you for watching!</h4>
+            <div class="cha"><img src="images//cha.png" alt="북썸캐릭터 아카" /></div>
+        </section>
+
+        <!--footer------->
+
+        <footer>
+            <footer>
+                <div id="foot">
+                    <h5>주식회사 앤트썸</h5>
+                    <ul class="info">
+                        <li>주소 : 서울특별시 구로구 디지털로 288, 511호(구로동, 대륭포스트타워 1차)</li>
+                        <li>대표 : 박경호 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; 연락처 : 02-2135-5538 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; 
+                            이메일 : <a href="mailto:service@antsome.com">service@antsome.com</a></li>
+                        <li>Copyright ⓒ Antsome All Rights Reserved.</li>
+                    </ul>
+                </div>
+
+
+                <!--footer_mobile---->
+                
+                <div id="foot_m">
+                    <h6>주식회사 앤트썸</h6>
+                    <ul class="info_m">
+                        <li>주소 : 서울특별시 구로구 디지털로 288, 511호 (구로동, 대륭포스트타워 1차)</li>
+                        <li>대표 : 박경호<br />연락처 : 02-2135-5538<br />이메일 : <a href="mailto:service@antsome.com">service@antsome.com</a></li>
+                        <li>Copyright ⓒ Antsome All Rights Reserved.</li>
+                    </ul>
+                </div>
+        </footer>
+
+    </div>
+
+    <!--top button------->
+
+    <div id="topButton" style="cursor: pointer"><img src="images/top.png" id="topButtonImg"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $(window).scroll(function() {
+                // top button controll
+                if ($(this).scrollTop() > 500) {
+                    $('#topButton').fadeIn();
+                    $('#logo').fadeIn();
+                } else {
+                    $('#topButton').fadeOut();
+                    $('#logo').fadeOut();
+                }
+            });
+
+            $("#topButtonImg").click(function() {
+                $('html, body').animate({scrollTop:0}, '300');
+            });
+
+        }); 
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GymSOME</title>
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        
+        <script type="text/javascript">
+
+            function clip(){
+                var url = '';
+                var textarea = document.createElement("textarea");
+                document.body.appendChild(textarea);
+                url = window.document.location.href;
+                textarea.value = url;
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+                alert("URL이 복사되었습니다.")
+            }
+            
+        </script>
+
+        <!--style------------------------------------------------------------------------------------------------------------------------>
+
+        <style type="text/css">
+            @font-face {
+                font-family: 'PyeongChangPeace-Bold';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'NanumSquareRound';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Happiness-Sans-Title';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            /* main style */
+
+            * {margin: 0; padding: 0; font-family: 'Nanum Square', '나눔스퀘어', sans-serif; list-style: none; text-decoration: none;}
+            #wrap {width: 100%; overflow: hidden;}
+            img {border: none; max-width: 100%;}
+            .clear {clear: both;}
+            a {color: #1F1F1F;}
+            #topButton {position: fixed; right: 2%; bottom: 50px; display: none; z-index: 999;}
+            
+            .text_c {text-align: center;}
+            .text_c h2 {font-family: 'Happiness-Sans-Title'; font-size: 45px; color: #4434F0;}
+            .text_c h3 {font-family: 'NanumSquareRound'; font-size: 25px; margin-top: 2%; line-height: 150%;}
+            .text_l h2 {font-family: 'Happiness-Sans-Title'; font-size: 45px; color: #4434F0; padding-top: 4%;}
+            .text_l h3 {font-family: 'NanumSquareRound'; font-size: 25px; margin-top: 2%; line-height: 150%;}
+
+            .img {margin: 0 auto;  margin-top: 4%; text-align: center;}
+
+            /* header */
+
+            header {height: 800px; width: 100%; background: linear-gradient(to bottom, #EDF2FC, white);}
+            nav {width: 80%; height: 10%; margin: 0 auto; padding-top: 1%;}
+            nav h1 a {font-size: 30px; font-family: 'PyeongChangPeace-Bold'; color: #4434F0;}
+            #banner {width: 80%; margin: 0 auto;}
+            .logo {float: left; width: 25%;}
+            .logo>ul {margin-top: 55%;}
+            .logo>ul>li {text-align: center;}
+            .logo>ul>li:first-child {width: 25%; margin: 0 auto;}
+            .logo>ul>li:nth-child(2) {font-family: 'PyeongChangPeace-Bold'; color: #4434F0; font-size: 54px; margin-top: 4%;}
+            .logo>ul>li:last-child {font-family: 'NanumSquareRound'; font-weight: bold; font-size: 20px; margin-top: 3%;}
+            .ba_img {float: right; width: 55%; margin-top: 2%;}
+
+            /* con01 */
+
+            #con01 {width: 80%; margin: 0 auto; margin-top: 5%;}
+            .class01 {width: 50%; margin: 0 auto; text-align: center;}
+            .class02 {margin-top: 6%;}
+
+            /* con02 */
+
+            #back {height: 1000px; background: #f4f4f4; margin-top: 6%;}
+            #con2 {width: 80%; margin: 0 auto;}
+            .review01 {float: left; width: 20%; margin-right: 12%;}
+            .review02 {width: 20%; float: left; margin-right: 12%;}
+            .review03 {float: left; width: 25%; margin-top: 14%;}
+            
+            /* con03 */
+
+            #con03 {width: 80%; margin: 0 auto; margin-top: 10%;}
+            .feedback01 {width: 26%; float: left; margin-left: 15%;}
+            .feedback02 {width: 40%; float: right; margin-top: 1%; margin-right: 15%;}
+
+            /* con04 */
+
+            #back2 {width: 100%;}
+            #bgcolor {width: 100%; height: 470px; margin-top: 22.5%; background-color: aliceblue; position: absolute; z-index: -99;}
+            #con04 {width: 80%; margin: 0 auto; position: relative;}
+            .record01 {float: left; width: 30%; margin-left: 6%;}
+            .record02 {float: right; margin-top: 3.5%; width: 50%; margin-right: 10%;}
+            .record03 {float: left; width: 20%; margin-top: 7.4%; margin-left: 4%;}
+            .record04 {float: right; width: 20%; margin-top: 7.4%; margin-right: 10%;}
+            .record05 {display: none;}
+
+            /* con05 */
+
+            #con05 {width: 100%; margin-top: 10%; text-align: center;}
+            .fu_t {font-family: 'Happiness-Sans-Title'; font-size: 22px; color: #4434F0; text-align: center; margin-top: 3%;}
+            .fu1 {width: 35%; float: left; margin-left: 10%;}
+            .fu1 ul li:last-child {text-align: center;}
+            .fu2 {width: 35%; float: right; margin-right: 10%;}
+            .fu2 ul li:last-child {text-align: center;}
+            .fu3 {width: 35%; float: left; margin-left: 10%; margin-top: 3%;}
+            .fu3 ul li:last-child {text-align: center;}
+            .fu4 {width: 35%; float: right; margin-right: 10%; margin-top: 3%;}
+            .fu4 ul li:last-child {text-align: center;}
+
+            /* con06 */
+            
+            #con06 {width: 100%; background: #f4f4f4; height: 400px; margin-top: 10%;}
+            #con06>ul {text-align: center;}
+            #con06>ul>li:first-child {padding-top: 5%; font-size: 20px; color: #6F6F6F;}
+            #con06>ul>li:nth-child(2) {font-family: 'Happiness-Sans-Title'; font-size: 45px; color: #1F1F1F;}
+            #con06 ul li a {font-family: 'Happiness-Sans-Title'; font-size: 20px;}
+            #con06 ul li a:hover {color: #4434F0;}
+
+            /* footer */
+
+            footer {width: 100%; height: 300px; background: #414141;}
+            #foot {width: 80%; margin: 0 auto;}
+            .use {padding-top: 3.5%; font-size: 18px;}
+            .use li a {float: left; color: #FFFFFF;}
+            .use li a:hover {font-weight:  bold;}
+            .use li:first-child a {margin-right: 40px;}
+            h4 {margin-top: 4%; font-size: 20px; color: #fff;}
+            .info {margin-top: 2%; color: #B2B2B2; font-size: 15px;}
+            .info li:first-child {line-height: 180%;}
+            .info li {padding-top: 0.5%;}
+            .info li a {color: #fff; font-weight: bold;}
+            .info li a:hover {font-weight: bold; color: #4434F0;}
+
+            #foot_m {display: none;}
+
+            /* --------------------------------------------------- 반응형 ---------------------------------------------------------------------------*/
+            @media screen and (min-width:992px) and (max-width: 1199px) { /*테블릿 가로*/
+
+                #topButton {width: 8%; height: auto;}
+
+                .text_c h2 {font-size: 35px;}
+                .text_c h3 {font-size: 18px;}
+                .text_l h2 {font-size: 35px;}
+                .text_l h3 {font-size: 18px;}
+
+                /* header */
+
+                header {height: 550px;}
+                .logo>ul>li:nth-child(2) {font-size: 40px;}
+                .logo>ul>li:last-child {font-size: 20px;}
+                
+                /* con02 */
+
+                #back {height: 560px;}
+
+                /* con04 */
+
+                #bgcolor {height: 240px; margin-top: 26%;}
+                .record02 { margin-top: 3.8%;}
+                .record03 {width: 20%;}
+                .record04 {width: 20%;}
+
+                /* con05 */
+
+                .fu_t {font-size: 20px;}
+
+                /* con06 */
+                
+                #con06 {height: 330px;}
+                #con06>ul>li:first-child {font-size: 18px;}
+                #con06>ul>li:nth-child(2) {font-size: 41px;}
+                #con06 ul li a {color: #4434F0;}
+
+                /* footer */
+
+                footer {height: 280px;}
+                .use {padding-top: 5%; font-size: 15px;}
+                h4 {margin-top: 6%; font-size: 18px;}
+                .info {font-size: 14px;}
+            }
+
+            @media screen and (max-width: 991px) { /*테블릿 세로*/
+
+                #topButton {width: 8%; height: auto;}
+
+                .text_c h2 {font-size: 35px;}
+                .text_c h3 {font-size: 18px;}
+                .text_l h2 {font-size: 35px;}
+                .text_l h3 {font-size: 18px;}
+
+                /* header */
+
+                header {height: 500px;}
+                .logo>ul>li:nth-child(2) {font-size: 30px;}
+                .logo>ul>li:last-child {font-size: 16px;}
+
+                /* con02 */
+
+                #back {height: 500px;}
+
+                /* con04 */
+
+                #bgcolor {height: 235px; margin-top: 27%;}
+                .record02 { margin-top: 5%;}
+                .record03 {width: 19.5%;}
+                .record04 {width: 19.5%;}
+
+                /* con05 */
+
+                .fu_t {font-size: 18px;}
+
+                /* con06 */
+                
+                #con06 {height: 300px;}
+                #con06>ul>li:first-child {font-size: 15px;}
+                #con06>ul>li:nth-child(2) {font-size: 35px;}
+                #con06>ul>li:nth-child(3) {width: 10%; margin: 0 auto; text-align: center;}
+                #con06 ul li a {color: #4434F0;}
+
+                /* footer */
+
+                footer {height: 240px;}
+                .use {padding-top: 5%; font-size: 15px;}
+                h4 {margin-top: 6%; font-size: 18px;}
+                .info {font-size: 12px;}
+            }
+
+            @media screen and (max-width: 767px) { /*모바일*/
+                
+                #topButton {visibility: hidden;}
+                
+                .text_c h2 {font-size: 28px;}
+                .text_c h3 {font-size: 14px;}
+                .text_l h2 {font-size: 28px; text-align: center;}
+                .text_l h3 {font-size: 14px; text-align: center;}
+
+                /* header */
+
+                header {height: 700px;}
+                .logo {width: 100%;}
+                .logo>ul>li:nth-child(2) {font-size: 30px;}
+                .logo>ul>li:last-child {font-size: 16px;}
+                .logo>ul {margin-top: 10%;}
+                .logo>ul>li {text-align: center;}
+                .logo>ul>li:first-child {width: 20%;}
+                .ba_img {width: 100%; margin-top: 30%;}
+
+                /* con01 */
+
+                .class01 {width: 100%; margin: 0 auto; text-align: center;}
+                .class02 {margin-top: 6%;}
+
+                /* con02 */
+        
+                #back {height: 900px;}
+                .review01 {width: 40%; margin-top: 6%; position: relative; left: 30%;}
+                .review02 {width: 40%; margin-top: 6%; position: relative; left: 30%;}
+                .review03 { width: 40%; margin-top: 6%; clear: both; position: relative; left: 30%;}
+
+                /* con03 */ 
+
+                .feedback01 {width: 50%; margin-left: 0; position: relative; left: 25%;}
+                .feedback02 {width: 70%; margin-top: 8%;}
+
+                /* con04 */
+
+                #bgcolor {height: 2180px; margin-top: 0;}
+                .record01 {width: 64%; position: relative; left: 12%;}
+                .record02 {display: none;}
+                .record03 {width: 50%; margin-top: 15%; position: relative; left: 20%;}
+                .record04 {width: 50%; margin-top: 15%; position: relative; left: -16%;}
+                .record05 {display: block; width: 50%; margin-top: 15%; margin: 0 auto;}
+
+                /* con05 */
+
+                #con05 {margin-top: 15%;}
+
+                .fu_t {font-size: 15px;}
+                .fu1 {width: 80%; margin: 0 auto; margin-left: 10%;}
+                .fu2 {width: 80%; margin: 0 auto; margin-right: 10%;}
+                .fu3 {width: 80%; margin: 0 auto; margin-left: 10%;}
+                .fu4 {width: 80%; margin: 0 auto; margin-right: 10%;}
+
+                /* con06 */
+                
+                #con06 {height: 250px;}
+                #con06>ul>li:first-child {padding-top: 15%;}
+                #con06>ul>li:nth-child(3) {width: 10%; margin: 0 auto; text-align: center;}
+                #con06 ul li a {color: #4434F0;}
+
+                /* footer */
+
+                #foot {display: none;}
+
+                #foot_m {display: block; width: 95%; margin: 0 auto;}
+                footer {height: 240px; text-align: left;}
+                .use_m {padding-top: 8%; font-size: 14px;}
+                .use {padding-top: 3.5%; font-size: 18px;}
+                .use_m li a {float: left; color: #fff}
+                .use_m li:first-child a {padding-right: 25px;}
+                h5 {margin-top: 10%; font-size: 12px; color: #fff;}
+                .info_m {font-size: 11px; margin-top: 4%;}
+                .info_m li {color: #B2B2B2; line-height: 180%;}
+                .info_m li a {color: #fff; font-weight: bold;}
+                .info_m li:nth-child(2) {line-height: 150%;}
+                .info_m li:last-child {padding-top: 10px;}
+                
+            }
+        </style>
+
+    </head>
+    <body>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <div id="wrap">
+            <header>
+                <nav>
+                    <h1><a href="#">GymSOME</a></h1>
+                </nav>
+                <div id="banner">
+                    <div class="logo">
+                        <ul>
+                            <li><img src="images/appicon.png" alt="gymsome appicon" /></li>
+                            <li>GymSOME</li>
+                            <li>나와 트레이너의 커뮤니케이션 서비스</li>
+                        </ul>
+                    </div>
+                    <div class="ba_img">
+                        <img src="images/banner.png" alt="gymsome banner" />
+                    </div>
+                </div>
+            </header>
+            
+            <div class="clear"></div>
+
+            <!--contents01------->
+
+            <section id="con01">
+                <div class="text_c" data-aos="fade-up">
+                    <h2>내가 원하는 대로</h2>
+                    <h3>탐색 기능을 통해 클래스를 추천받고,<br />내 주변 탐색을 통해 나와 가까이에 있는 클래스들을 확인할 수 있어요.</h3>
+                </div>
+                <div class="img">
+                    <div class="class01" data-aos="fade-up"><img src="images/class01.png" alt="클래스 탐색" />
+                    <div class="class02" data-aos="fade-up"><img src="images/class02.png" alt="내 주변 클래스" /></div>
+                </div>
+                
+            </section>
+
+            <div class="clear"></div>
+
+            <!--contents02------->
+
+            <section id="back">
+                <div id="con2"> 
+                    <div class="text_l" data-aos="fade-left">
+                        <h2>내가 필요한 정보만</h2>
+                        <h3>트레이너의 프로필을 통해 트레이너에 대한 정보와<br />간단한 후기들로 트레이너를 파악할 수 있어요.</h3>
+                    </div>
+                    <div class="img">
+                        <div class="review01" data-aos="fade-left"><img src="images/profile.gif" alt="트레이너 프로필" /></div>
+                        <div class="review02" data-aos="fade-left"><img src="images/review02.png" alt="트레이너 리뷰" /></div>
+                        <div class="review03" data-aos="fade-left"><img src="images/review.png" alt="클래스 상세리뷰" /></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="clear"></div>
+
+            <!--contents03------->
+
+            <section id="con03">
+                <div class="text_c" data-aos="fade-down">
+                    <h2>불필요한 정보 노출이 없도록</h2>
+                    <h3>일대일 채팅을 통해 트레이너와 기록을 공유하고<br />피드백을 요청할 수 있어요.</h3>
+                </div>
+                <div class="img">
+                    <div class="feedback01" data-aos="fade-right"><img src="images/feedback01.png" alt="채팅" /></div>
+                    <div class="feedback02" data-aos="fade-left"><img src="images/feedback02.png" alt="피드백" /></div>
+                </div>
+            </section>
+
+            <div class="clear"></div>
+
+            <!--contents04------->
+            
+            <div id="back2">
+                <div id="bgcolor"></div>
+                <section id="con04">
+                    <div class="text_l" data-aos="fade-left">
+                        <h2>나를 더 잘 알기 위해</h2>
+                        <h3>나의 신체 정보와 저장한 기록들, 트레이너가 피드백 해준 자료들을 기반으로<br />하이라이트 정보를 그래프로 제공합니다. 목표 달성률과 비교하여 나의 몸을 파악하고 관리할 수 있어요.</h3>
+                    </div>
+                    <div class="img">
+                        <div class="record01" data-aos="zoom-in"><img src="images/record01.png" alt="내 정보" /></div>
+                        <div class="record02" data-aos="fade-left"><img src="images/record02.png" alt="식단기록" /></div>
+                        <div class="record05" data-aos="fade-left"><img src="images/record05.png" alt="식단기록" /></div>
+                        <div class="record03" data-aos="fade-left"><img src="images/record03.png" alt="운동기록 달력" /></div>
+                        <div class="record04" data-aos="fade-left"><img src="images/record04.png" alt="운동기록 상세" /></div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="clear"></div>
+
+            <!--contents05------->
+
+            <section id="con05">
+                <div class="text_c" data-aos="fade-down">
+                    <h2>짐썸이 나아갈 미래</h2>
+                    <h3>짐썸은 누구나 쉽게 참여 할 수 있는, 건강한 운동 습관과<br />문화를 형성할 수 있는 플랫폼이 되고자 합니다. </h3>
+                </div>
+                <div class="fu1">
+                    <ul>
+                        <li><img src="images/fu1_01.gif" alt="모든운동기록" /></li>
+                        <li class="fu_t">나의 모든 운동 역사 기록</li>
+                    </ul>
+                </div>
+                <div class="fu2">
+                    <ul>
+                        <li><img src="images/fu2_01.gif" alt="비대면" /></li>
+                        <li class="fu_t">비대면 트레이닝</li>
+                    </ul>
+                </div>
+                <div class="fu3">
+                    <ul>
+                        <li><img src="images/fu3_01.gif" alt="iot 기기" /></li>
+                        <li class="fu_t">IoT 기기와의 연결</li>
+                    </ul>
+                </div>
+                <div class="fu4">
+                    <ul>
+                        <li><img src="images/fu4_01.gif" alt="인공지능 트레이너" /></li>
+                        <li class="fu_t">AI 인공지능 트레이너</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="clear"></div>
+
+            <!--contents06------->
+            <section id="con06">
+                <ul>
+                    <li>함께하기를 원하신다면 아래 메일로 연락주세요.</li>
+                    <li>출시까지 기다려주세요</li>
+                    <li data-aos="zoom-out"><img src="images/pray.png"></li>
+                    <li><a href="#" onclick="clip(); return false;">기다리며 공유하기</a></li>
+                </ul>
+            </section>
+
+            <div class="clear"></div>
+            
+            <!--footer------->
+
+            <footer>
+                <div id="foot">
+                    <ul class="use">
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                    <h4>주식회사 앤트썸</h4>
+                    <ul class="info">
+                        <li>본사 : 서울특별시 구로구 디지털로 288, 511호(구로동, 대륭포스트타워 1차)</li>
+                        <li>대표 : 박경호 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; 연락처 : 02-2135-5538 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; 
+                            이메일 : <a href="mailto:service@antsome.com">service@antsome.com</a></li>
+                        <li>Copyright ⓒ Antsome All Rights Reserved.</li>
+                    </ul>
+                </div>
+
+                <!--footer_mobile---->
+                
+                <div id="foot_m">
+                    <ul class="use_m">
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                    <h5>주식회사 앤트썸</h5>
+                    <ul class="info_m">
+                        <li>본사 : 서울특별시 구로구 디지털로 288, 511호 (구로동, 대륭포스트타워 1차)</li>
+                        <li>대표 : 박경호<br />연락처 : 02-2135-5538<br />이메일 : <a href="mailto:service@antsome.com">service@antsome.com</a></li>
+                        <li>Copyright ⓒ Antsome All Rights Reserved.</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            AOS.init();
+        </script>
+
+        <!--top button------->
+
+        <div id="topButton" style="cursor: pointer"><img src="images/top.png" id="topButtonImg"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $(window).scroll(function() {
+                    // top button controll
+                    if ($(this).scrollTop() > 500) {
+                        $('#topButton').fadeIn();
+                    } else {
+                        $('#topButton').fadeOut();
+                    }
+                });
+
+                $("#topButtonImg").click(function() {
+                    $('html, body').animate({scrollTop:0}, '300');
+                });
+
+            }); 
+        </script>
+    </body>
+</html>
