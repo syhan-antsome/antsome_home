@@ -25,20 +25,20 @@ import iotPng from "public/images/iot.png";
 import o2oPng from "public/images/o2o.png";
 import socialPng from "public/images/social.png";
 
-import project01_mPng from "public/images/projects/project01_m.png";
-import project02_mPng from "public/images/projects/project02_m.png";
-import project03_mPng from "public/images/projects/project03_m.png";
-import project04_mPng from "public/images/projects/project04_m.png";
+import service01_mPng from "public/images/services/service01_m.png";
+import service02_mPng from "public/images/services/service02_m.png";
+import service03_mPng from "public/images/services/service03_m.png";
+import service04_mPng from "public/images/services/service04_m.png";
 
-import project01_tPng from "public/images/projects/project01_t.png";
-import project02_tPng from "public/images/projects/project02_t.png";
-import project03_tPng from "public/images/projects/project03_t.png";
-import project04_tPng from "public/images/projects/project04_t.png";
+import service01_tPng from "public/images/services/service01_t.png";
+import service02_tPng from "public/images/services/service02_t.png";
+import service03_tPng from "public/images/services/service03_t.png";
+import service04_tPng from "public/images/services/service04_t.png";
 
-import project01_wPng from "public/images/projects/project01_w.png";
-import project02_wPng from "public/images/projects/project02_w.png";
-import project03_wPng from "public/images/projects/project03_w.png";
-import project04_wPng from "public/images/projects/project04_w.png";
+import service01_wPng from "public/images/services/service01_w.png";
+import service02_wPng from "public/images/services/service02_w.png";
+import service03_wPng from "public/images/services/service03_w.png";
+import service04_wPng from "public/images/services/service04_w.png";
 
 import culture01Png from "public/images/culture/culture01.png";
 import culture02Png from "public/images/culture/culture02.png";
@@ -111,9 +111,9 @@ export default function Index() {
   })]);
 
   // no
-  const [projectMNo, setProjectMNo] = useState(1);
-  const [projectTNo, setProjectTNo] = useState(1);
-  const [projectWNo, setProjectWNo] = useState(1);
+  const [serviceMNo, setServiceMNo] = useState(1);
+  const [serviceTNo, setServiceTNo] = useState(1);
+  const [serviceWNo, setServiceWNo] = useState(1);
 
   return (
     <Box style={{ width: "100%", textAlign: "-webkit-center" }}>
@@ -186,12 +186,12 @@ export default function Index() {
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
             fontSize: "40px", fontWeight: 700, zIndex: 99, color: "#fff", top: "400px",
-          }}>PROJECTS<br />
+          }}>SERVICES<br />
             <Button className={classes.index_button} style={{
               textTransform: "lowercase",
               width: "120px", height: "48px",
               fontSize: "20px", padding: "13px 0",
-            }} component={Link} href="/projects">more</Button>
+            }} component={Link} href="/services">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -203,7 +203,7 @@ export default function Index() {
             fontSize: "30px", zIndex: 88, color: "#fff",
             marginTop: "50px", marginLeft: "30px",
           }}>
-              <Typography style={{ fontSize: "20px", fontWeight: 700 }}>{'0' + projectMNo}/04</Typography>
+              <Typography style={{ fontSize: "20px", fontWeight: 700 }}>{'0' + serviceMNo}/04</Typography>
               <Typography style={{ fontSize: "20px" }}>Mobile Application</Typography>
             </Box>
           </Box>
@@ -220,13 +220,13 @@ export default function Index() {
               pauseOnHover: false,
               speed: 3000,
               autoplaySpeed: 4000,
-              afterChange: (current) => { setProjectMNo(current + 1); },
+              afterChange: (current) => { setServiceMNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src={project01_mPng} alt="project01" style={{width: '100%', height: 'auto'}} />
-              <Image src={project02_mPng} alt="project02" style={{width: '100%', height: 'auto'}} />
-              <Image src={project03_mPng} alt="project03" style={{width: '100%', height: 'auto'}} />
-              <Image src={project04_mPng} alt="project04" style={{width: '100%', height: 'auto'}} />
+              <Image src={service01_mPng} alt="service01" style={{width: '100%', height: 'auto'}} />
+              <Image src={service02_mPng} alt="service02" style={{width: '100%', height: 'auto'}} />
+              <Image src={service03_mPng} alt="service03" style={{width: '100%', height: 'auto'}} />
+              <Image src={service04_mPng} alt="service04" style={{width: '100%', height: 'auto'}} />
             </Slider>
           </Box>
         </Box>
@@ -234,12 +234,12 @@ export default function Index() {
           <Box style={{
             width: "90%", height: "100%", position: "absolute",
             fontSize: "60px", fontWeight: 700, zIndex: 99, color: "#fff", top: "400px",
-          }}>PROJECTS<br />
+          }}>SERVICES<br />
             <Button className={classes.index_button} style={{
               textTransform: "lowercase",
               width: "120px", height: "48px",
               fontSize: "20px", padding: "13px 0",
-            }} component={Link} href="/projects">more</Button>
+            }} component={Link} href="/services">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -251,7 +251,7 @@ export default function Index() {
             fontSize: "30px", zIndex: 88, color: "#fff",
             marginTop: "50px", marginLeft: "50px",
           }}>
-              <Typography style={{ fontSize: "26px", fontWeight: 700 }}>{'0' + projectTNo}/04</Typography>
+              <Typography style={{ fontSize: "26px", fontWeight: 700 }}>{'0' + serviceTNo}/04</Typography>
               <Typography style={{ fontSize: "26px" }}>Mobile Application</Typography>
             </Box>
           </Box>
@@ -268,13 +268,13 @@ export default function Index() {
               pauseOnHover: false,
               speed: 3000,
               autoplaySpeed: 4000,
-              afterChange: (current) => { setProjectTNo(current + 1); },
+              afterChange: (current) => { setServiceTNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src={project01_tPng} alt="project01" style={{width: '100%', height: 'auto'}} />
-              <Image src={project02_tPng} alt="project02" style={{width: '100%', height: 'auto'}} />
-              <Image src={project03_tPng} alt="project03" style={{width: '100%', height: 'auto'}} />
-              <Image src={project04_tPng} alt="project04" style={{width: '100%', height: 'auto'}} />
+              <Image src={service01_tPng} alt="service01" style={{width: '100%', height: 'auto'}} />
+              <Image src={service02_tPng} alt="service02" style={{width: '100%', height: 'auto'}} />
+              <Image src={service03_tPng} alt="service03" style={{width: '100%', height: 'auto'}} />
+              <Image src={service04_tPng} alt="service04" style={{width: '100%', height: 'auto'}} />
             </Slider>
           </Box>
         </Box>
@@ -282,13 +282,13 @@ export default function Index() {
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
             fontSize: "90px", fontWeight: 900, zIndex: 99, color: "#fff", top: "300px",
-          }}>PROJECTS<br />
+          }}>SERVICES<br />
             <Button className={classes.index_button} style={{ textTransform: "lowercase" }} sx={{
               width: { xs: "89px", sm: "119px", md: "180px" },
               height: { xs: "35px", sm: "47px", md: "70px" },
               fontSize: { xs: "12px", sm: "16px", md: "26px" },
               padding: { xs: "16px 0", sm: "13px 22px 10px 22px", md: "12px 30px 10px 30px" },
-            }} component={Link} href="/projects">more</Button>
+            }} component={Link} href="/services">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -300,7 +300,7 @@ export default function Index() {
             fontSize: "30px", zIndex: 88, color: "#fff",
             marginTop: "50px",
           }}>
-              <Typography style={{ fontSize: "30px", fontWeight: 800 }}>{'0' + projectWNo}/04</Typography>
+              <Typography style={{ fontSize: "30px", fontWeight: 800 }}>{'0' + serviceWNo}/04</Typography>
               <Typography style={{ fontSize: "30px" }}>Mobile Application</Typography>
             </Box>
           </Box>
@@ -317,13 +317,13 @@ export default function Index() {
               pauseOnHover: false,
               speed: 3000,
               autoplaySpeed: 4000,
-              afterChange: (current) => { setProjectWNo(current + 1); },
+              afterChange: (current) => { setServiceWNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src={project01_wPng} alt="project01" style={{width: '100%', height: 'auto'}} />
-              <Image src={project02_wPng} alt="project02" style={{width: '100%', height: 'auto'}} />
-              <Image src={project03_wPng} alt="project03" style={{width: '100%', height: 'auto'}} />
-              <Image src={project04_wPng} alt="project04" style={{width: '100%', height: 'auto'}} />
+              <Image src={service01_wPng} alt="service01" style={{width: '100%', height: 'auto'}} />
+              <Image src={service02_wPng} alt="service02" style={{width: '100%', height: 'auto'}} />
+              <Image src={service03_wPng} alt="service03" style={{width: '100%', height: 'auto'}} />
+              <Image src={service04_wPng} alt="service04" style={{width: '100%', height: 'auto'}} />
             </Slider>
           </Box>
         </Box>

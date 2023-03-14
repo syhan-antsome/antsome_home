@@ -75,7 +75,7 @@ export default function Footer() {
             display: { xs: "none", sm: "block" },
             marginLeft: { xs: "10px", sm: "27px", md: "32px" },
             fontSize: { xs: "21px", sm: "17px", md: "21px" },
-          }} component={Link} href="/projects">PROJECTS</Typography>
+          }} component={Link} href="/services">SERVICES</Typography>
         <Typography className={classes.foot_text}
           sx={{
             display: { xs: "none", sm: "block" },

@@ -142,10 +142,10 @@ const useStyles = makeStyles(theme => ({
 export default function Header(props) {
   const classes = useStyles();
 
-  const isWhite = props.isWhite ? props.isWhite : false;
-  const borderStyle = isWhite ? { borderBottom: "1px solid #fff", position: "absolute", top: "0px", width: "100%" } :
+  const whiteBtn = props.isWhite === true ? true : false;
+  const borderStyle = whiteBtn ? { borderBottom: "1px solid #fff", position: "absolute", top: "0px", width: "100%" } :
     { borderBottom: "1px solid #000", position: "absolute", top: "0px", width: "100%" };
-  const menuStyle = isWhite ? { color: "#fff", fontWeight: 600, padding: "0px" } :
+  const menuStyle = whiteBtn ? { color: "#fff", fontWeight: 600, padding: "0px" } :
     { color: "#000", fontWeight: 600, padding: "0px" };
 
   const [state, setState] = React.useState({
@@ -182,7 +182,7 @@ export default function Header(props) {
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
         >
-          {[['ABOUT US', '/aboutus'], ['PROJECTS', '/projects'], ['RECRUIT', '/recruit'], ['CONTACT', '/contactus']].map((m, index) => (
+          {[['ABOUT US', '/aboutus'], ['SERVICES', '/services'], ['RECRUIT', '/recruit'], ['CONTACT', '/contactus']].map((m, index) => (
             <Box key={index} style={{ borderBottom: "2px solid #fff", height: "67px", paddingTop: "16px" }}>
               <Box style={{ width: "100%" }} component={Link} href={m[1]}>
                 <Typography
@@ -245,10 +245,10 @@ export default function Header(props) {
             <Box sx={{
               width: { xs: "100px", sm: "180px", md: "265px" }
             }}><Link href="/" color="primary">
-                {isWhite &&
+                {whiteBtn &&
                   <Image src={logo_wPng} alt="antsome" width="100%" />
                 }
-                {!isWhite &&
+                {!whiteBtn &&
                   <Image src={logo_bPng} alt="antsome" width="100%" />
                 }
               </Link>
@@ -267,35 +267,35 @@ export default function Header(props) {
             </Paper>
             <Paper elevation={0} style={{ border: 0, backgroundColor: "#ffffff00" }}
               sx={{ display: { xs: 'none', sm: 'block', md: 'none' } }}>
-              {isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/aboutus">ABOUT US</Button>
-                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/projects">PROJECTS</Button>
-                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/recruit">RECRUIT</Button>
-                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/contactus">CONTACT</Button>
+              {whiteBtn && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Button className={classes.ant_sm_menu_white_button} disableRipple={true} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_sm_menu_white_button} disableRipple={true} component={Link} href="/services">SERVICES</Button>
+                <Button className={classes.ant_sm_menu_white_button} disableRipple={true} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_sm_menu_white_button} disableRipple={true} component={Link} href="/contactus">CONTACT</Button>
               </Stack>
               }
-              {!isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/aboutus">ABOUT US</Button>
-                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/projects">PROJECTS</Button>
-                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/recruit">RECRUIT</Button>
-                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/contactus">CONTACT</Button>
+              {!whiteBtn && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Button className={classes.ant_sm_menu_black_button} disableRipple={true} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_sm_menu_black_button} disableRipple={true} component={Link} href="/services">SERVICES</Button>
+                <Button className={classes.ant_sm_menu_black_button} disableRipple={true} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_sm_menu_black_button} disableRipple={true} component={Link} href="/contactus">CONTACT</Button>
               </Stack>
               }
             </Paper>
             <Paper elevation={0} style={{ border: 3, backgroundColor: "#ffffff00" }}
               sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-              {isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                <Button className={classes.ant_md_menu_white_button} component={Link} href="/aboutus">ABOUT US</Button>
-                <Button className={classes.ant_md_menu_white_button} component={Link} href="/projects">PROJECTS</Button>
-                <Button className={classes.ant_md_menu_white_button} component={Link} href="/recruit">RECRUIT</Button>
-                <Button className={classes.ant_md_menu_white_button} component={Link} href="/contactus">CONTACT</Button>
+              {whiteBtn && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Button className={classes.ant_md_menu_white_button} disableRipple={true} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_md_menu_white_button} disableRipple={true} component={Link} href="/services">SERVICES</Button>
+                <Button className={classes.ant_md_menu_white_button} disableRipple={true} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_md_menu_white_button} disableRipple={true} component={Link} href="/contactus">CONTACT</Button>
               </Stack>
               }
-              {!isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                <Button className={classes.ant_md_menu_black_button} component={Link} href="/aboutus">ABOUT US</Button>
-                <Button className={classes.ant_md_menu_black_button} component={Link} href="/projects">PROJECTS</Button>
-                <Button className={classes.ant_md_menu_black_button} component={Link} href="/recruit">RECRUIT</Button>
-                <Button className={classes.ant_md_menu_black_button} component={Link} href="/contactus">CONTACT</Button>
+              {!whiteBtn && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Button className={classes.ant_md_menu_black_button} disableRipple={true} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_md_menu_black_button} disableRipple={true} component={Link} href="/services">SERVICES</Button>
+                <Button className={classes.ant_md_menu_black_button} disableRipple={true} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_md_menu_black_button} disableRipple={true} component={Link} href="/contactus">CONTACT</Button>
               </Stack>
               }
             </Paper>

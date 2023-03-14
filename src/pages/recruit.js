@@ -31,6 +31,10 @@ import process02Png from "public/images/recruit/process02.png";
 import process03Png from "public/images/recruit/process03.png";
 import process04Png from "public/images/recruit/process04.png";
 
+import arrowRightPng from "public/images/arrow_right.png";
+
+
+
 const useStyles = makeStyles(theme => ({
   recruit_button: {
     border: '2px solid #ffffff',
@@ -604,7 +608,7 @@ export default function Recruit() {
           maxWidth: "100%", marginTop: "54px"
         }}>
           <Box style={{ width: "95px" }}>
-            <img src="/images/recruit/process01.png" alt="입사지원" width="100%" />
+            <Image src={process01Png} alt="입사지원" style={{ width: "100%", height: 'auto' }} />
             <Typography style={{
               color: "#0C254B",
               fontSize: "14px",
@@ -612,10 +616,10 @@ export default function Recruit() {
             }}>입사지원</Typography>
           </Box>
           <Box style={{ width: "6px", margin: "0px 16px", paddingTop: "38px" }}>
-            <img src="/images/arrow_right.png" alt="next" width="100%" />
+            <Image src={arrowRightPng} alt="next" style={{ width: "100%", height: 'auto' }} />
           </Box>
           <Box style={{ width: "95px" }}>
-            <img src="/images/recruit/process02.png" alt="서류전형" width="100%" />
+            <Image src={process02Png} alt="서류전형" style={{ width: "100%", height: 'auto' }} />
             <Typography style={{
               color: "#0C254B",
               fontSize: "14px",
@@ -623,7 +627,7 @@ export default function Recruit() {
             }}>서류전형</Typography>
           </Box>
           <Box style={{ width: "6px", margin: "0px 16px", paddingTop: "38px" }}>
-            <img src="/images/arrow_right.png" alt="next" width="100%" />
+            <Image src={arrowRightPng} alt="next" style={{ width: "100%", height: 'auto' }} />
           </Box>
         </Box>
         <Box style={{
@@ -631,7 +635,7 @@ export default function Recruit() {
           maxWidth: "100%", marginTop: "19px"
         }}>
           <Box style={{ width: "95px" }}>
-            <img src="/images/recruit/process03.png" alt="면접" width="100%" />
+            <Image src={process03Png} alt="면접" style={{ width: "100%", height: 'auto' }} />
             <Typography style={{
               color: "#0C254B",
               fontSize: "14px",
@@ -639,10 +643,10 @@ export default function Recruit() {
             }}>면접</Typography>
           </Box>
           <Box style={{ width: "6px", margin: "0px 16px", paddingTop: "38px" }}>
-            <img src="/images/arrow_right.png" alt="next" width="100%" />
+            <Image src={arrowRightPng} alt="next" style={{ width: "100%", height: 'auto' }} />
           </Box>
           <Box style={{ width: "95px" }}>
-            <img src="/images/recruit/process04.png" alt="최종합격" width="100%" />
+            <Image src={process04Png} alt="최종합격" style={{ width: "100%", height: 'auto' }} />
             <Typography style={{
               color: "#0C254B",
               fontSize: "14px",

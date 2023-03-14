@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const getProjectCard = (pImg, propObj, index, st) => {
+const getServiceCard = (pImg, propObj, index, st) => {
   return <Grid key={index} style={{ height: "100%" }} spacing={1} container direction="row" justifyContent="center" alignItems="flex-start">
     <Grid item xs={12} sm={6}>
       <Paper elevation={0} style={{ border: "0px solid red", background: "#ffffff00" }} sx={{
@@ -135,7 +135,7 @@ const getProjectCard = (pImg, propObj, index, st) => {
   </Grid>;
 }
 
-const projects = [{
+const services = [{
   name: "linksome",
   img: linksomePng,
   title: "링크썸(linksome)",
@@ -267,7 +267,7 @@ const projects = [{
   isExist: true,
 },];
 
-export default function Projects() {
+export default function Services() {
   const classes = useStyles();
   return (
     <Box style={{ width: "100%", textAlign: "-webkit-center" }}>
@@ -296,7 +296,7 @@ export default function Projects() {
         }}
         >SERVICES</Typography>
         <div>
-          {projects.map((e, index) => { return getProjectCard(e.img, e, index, classes.link_button); })}
+          {services.map((e, index) => { return getServiceCard(e.img, e, index, classes.link_button); })}
         </div>
       </Box>
 
