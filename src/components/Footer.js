@@ -47,39 +47,40 @@ export default function Footer() {
           }}></Box>
       </Stack>
       <Box style={{ textAlign: "right", display: "flex", flexDirection: "row-reverse" }} sx={{
-          marginTop: { xs: "-30px", sm: "-40px", md: "-60px" },
-          minWidth: { xs: "100%", sm: "1024px", md: "1400px" },
-          maxWidth: { xs: "376px", sm: "1025px", md: "1401px" },
-        }}><Typography className={classes.foot_text}
+        marginTop: { xs: "-30px", sm: "-40px", md: "-60px" },
+        minWidth: { xs: "100%", sm: "1024px", md: "1400px" },
+        maxWidth: { xs: "376px", sm: "1025px", md: "1401px" },
+      }}>
+        <Typography className={classes.foot_text}
           sx={{
             marginRight: { xs: "10px", sm: "0px", md: "0px" },
             marginLeft: { xs: "0px", sm: "27px", md: "32px" },
             fontSize: { xs: "15px", sm: "17px", md: "21px" },
-        }} component={Link} noLinkStyle href="/privaterule">개인정보처리방침</Typography>
+          }} component={Link} noLinkStyle href="/privaterule">개인정보처리방침</Typography>
         <Typography className={classes.foot_text}
           sx={{
-          display: { xs: "none", sm: "block"},
-          marginLeft: { xs: "10px", sm: "27px", md: "32px" },
-          fontSize: { xs: "21px", sm: "17px", md: "21px" },
-        }} component={Link} noLinkStyle href="/contactus">CONTACT</Typography>
+            display: { xs: "none", sm: "block" },
+            marginLeft: { xs: "10px", sm: "27px", md: "32px" },
+            fontSize: { xs: "21px", sm: "17px", md: "21px" },
+          }} component={Link} noLinkStyle href="/contactus">CONTACT</Typography>
         <Typography className={classes.foot_text}
           sx={{
-          display: { xs: "none", sm: "block"},
-          marginLeft: { xs: "10px", sm: "27px", md: "32px" },
-          fontSize: { xs: "21px", sm: "17px", md: "21px" },
-        }} component={Link} noLinkStyle href="/recruit">RECRUIT</Typography>
+            display: { xs: "none", sm: "block" },
+            marginLeft: { xs: "10px", sm: "27px", md: "32px" },
+            fontSize: { xs: "21px", sm: "17px", md: "21px" },
+          }} component={Link} noLinkStyle href="/recruit">RECRUIT</Typography>
         <Typography className={classes.foot_text}
           sx={{
-          display: { xs: "none", sm: "block"},
-          marginLeft: { xs: "10px", sm: "27px", md: "32px" },
-          fontSize: { xs: "21px", sm: "17px", md: "21px" },
-        }} component={Link} noLinkStyle href="/projects">PROJECTS</Typography>
+            display: { xs: "none", sm: "block" },
+            marginLeft: { xs: "10px", sm: "27px", md: "32px" },
+            fontSize: { xs: "21px", sm: "17px", md: "21px" },
+          }} component={Link} noLinkStyle href="/projects">PROJECTS</Typography>
         <Typography className={classes.foot_text}
           sx={{
-          display: { xs: "none", sm: "block"},
-          marginLeft: { xs: "10px", sm: "27px", md: "32px" },
-          fontSize: { xs: "21px", sm: "17px", md: "21px" },
-        }} component={Link} noLinkStyle href="/aboutus">ABOUT US</Typography>
+            display: { xs: "none", sm: "block" },
+            marginLeft: { xs: "10px", sm: "27px", md: "32px" },
+            fontSize: { xs: "21px", sm: "17px", md: "21px" },
+          }} component={Link} noLinkStyle href="/aboutus">ABOUT US</Typography>
       </Box>
 
       {/* 하단의 앤트썸 로고 */}
@@ -89,7 +90,7 @@ export default function Footer() {
         textAlign: { xs: "center", sm: "left", md: "left" },
         height: { xs: "15px", sm: "25px", md: "37px" }
       }}>
-        <Image src={logo_gPng} height="100%" alt="antsome" />
+        <Image src={logo_gPng} alt="antsome" style={{ height: '100%', width: 'auto'}} />
       </Box>
 
       <Box style={{ color: "#707070", }} sx={{

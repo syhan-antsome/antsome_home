@@ -19,6 +19,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 import logo_wPng from "/public/images/logos/logo_w.png";
 import logo_bPng from "/public/images/logos/logo_b.png";
+import logo_tPng from "/public/images/logos/logo_t.png";
 
 const AntSmMenuBlackButton = styled(Button)`
   color: #000;
@@ -161,7 +162,7 @@ export default function Header(props) {
         }}>
           <Box style={{ display: "flex", justifyContent: "space-between" }}>
             <Box onClick={toggleDrawer(anchor, false)} component={Link} noLinkStyle href={"/"}>
-              <img src="/images/logo_t.png" alt="antsome" width="100px" height="14px" style={{ marginTop: 26 }} />
+              <Image src={logo_tPng} alt="antsome" style={{ marginTop: 26, width: '100%', height: '14px' }} />
             </Box>
             <CancelIcon style={{ marginTop: "15px", color: "#fff", fontSize: "40px" }} onClick={toggleDrawer(anchor, false)}></CancelIcon>
           </Box>
@@ -191,7 +192,7 @@ export default function Header(props) {
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
       >
-        <img src="/images/logo_t.png" alt="antsome" width="108px" height="14px" />
+        <Image src={logo_tPng} alt="antsome" style={{ width: '108px', height: '14px' }} />
         <Typography style={{ color: "#fff", fontSize: "17px", fontWeight: 700, marginTop: "-3px" }}>주식회사 앤트썸</Typography>
         <Typography style={{ color: "#fff", fontSize: "13px", marginTop: "15px" }}>
           서울특별시 구로구 디지털로 288, 511호<br />(구로동, 대륭포스트타워 1차)

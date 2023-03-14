@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@mui/styles';
 
-import { styled } from '@mui/material/styles';
 
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -46,8 +45,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   apply_button: {
-    border: '2px solid #ffffff',
-    color: '#fff',
+    border: '2px solid #0C254B',
+    color: '#0C254B',
     fontWeight: '700',
     backgroundColor: '#fff0',
     textAlign: 'center',
@@ -263,8 +262,7 @@ export default function Recruit() {
               <Box style={{ display: "flex", justifyContent: "center" }} sx={{
                 marginBottom: { xs: "20px", sm: "20px", md: "20px" },
               }}>
-                <Button className={classes.recruit_button}
-                  style={{ textTransform: "lowercase" }} sx={{
+                <Button className={classes.recruit_button} sx={{
                   width: { xs: "134px", sm: "118px", md: "178px" },
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
@@ -273,7 +271,7 @@ export default function Recruit() {
                 <Box sx={{
                   width: { xs: "10px", sm: "14px", md: "14px" },
                 }}></Box>
-                <Button className={classes.recruit_button} style={{ textTransform: "lowercase" }} sx={{
+                <Button className={classes.recruit_button} sx={{
                   width: { xs: "134px", sm: "118px", md: "178px" },
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
@@ -310,7 +308,7 @@ export default function Recruit() {
               <Box style={{ display: "flex", justifyContent: "center" }} sx={{
                 marginBottom: { xs: "20px", sm: "20px", md: "20px" },
               }}>
-                <Button className={classes.recruit_button} style={{ textTransform: "lowercase" }} sx={{
+                <Button className={classes.recruit_button} sx={{
                   width: { xs: "134px", sm: "118px", md: "178px" },
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
@@ -319,7 +317,7 @@ export default function Recruit() {
                 <Box sx={{
                   width: { xs: "14px", sm: "14px", md: "14px" },
                 }}></Box>
-                <Button className={classes.recruit_button} style={{ textTransform: "lowercase" }} sx={{
+                <Button className={classes.recruit_button} sx={{
                   width: { xs: "134px", sm: "118px", md: "178px" },
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
@@ -354,7 +352,7 @@ export default function Recruit() {
               <Box style={{ display: "flex", justifyContent: "center" }} sx={{
                 marginBottom: { xs: "20px", sm: "20px", md: "20px" },
               }}>
-                <Button className={classes.recruit_button} style={{ textTransform: "lowercase" }} sx={{
+                <Button className={classes.recruit_button} sx={{
                   width: { xs: "134px", sm: "118px", md: "178px" },
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
@@ -363,7 +361,7 @@ export default function Recruit() {
                 <Box sx={{
                   width: { xs: "14px", sm: "14px", md: "14px" },
                 }}></Box>
-                <Button className={classes.recruit_button} style={{ textTransform: "lowercase" }} sx={{
+                <Button className={classes.recruit_button} sx={{
                   width: { xs: "134px", sm: "118px", md: "178px" },
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
@@ -871,7 +869,7 @@ export default function Recruit() {
             </Grid>
           </Box>
         </Box>
-        <Button className={classes.apply_button} style={{ textTransform: "lowercase" }} sx={{
+        <Button className={classes.apply_button} sx={{
           marginBottom: { xs: "40px", sm: "93px", md: "200px" },
           width: { xs: "105px", sm: "259px", md: "259px" },
           height: { xs: "28px", sm: "70px", md: "70px" },
