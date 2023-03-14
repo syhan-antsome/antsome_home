@@ -64,6 +64,7 @@ const useStyles = makeStyles(theme => ({
     },
     '&:before': {
       position: 'absolute',
+      content: '""',
       width: '0',
       height: '4px',
       bottom: '-32px',
@@ -92,6 +93,7 @@ const useStyles = makeStyles(theme => ({
     },
     '&:before': {
       position: 'absolute',
+      content: '""',
       width: '0',
       height: '4px',
       bottom: '-18px',
@@ -119,6 +121,7 @@ const useStyles = makeStyles(theme => ({
     },
     '&:before': {
       position: 'absolute',
+      content: '""',
       width: '0',
       height: '4px',
       bottom: '-18px',
@@ -430,10 +433,10 @@ export default function Header(props) {
               </Stack>
               }
               {!isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                <Link className={classes.ant_md_menu_black_button} href="/aboutus">ABOUT US</Link>
-                <Link className={classes.ant_md_menu_black_button} href="/projects">PROJECTS</Link>
-                <Link className={classes.ant_md_menu_black_button} href="/recruit">RECRUIT</Link>
-                <Link className={classes.ant_md_menu_black_button} href="/contactus">CONTACT</Link>
+                <Button className={classes.ant_md_menu_black_button} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_md_menu_black_button} component={Link} href="/projects">PROJECTS</Button>
+                <Button className={classes.ant_md_menu_black_button} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_md_menu_black_button} component={Link} href="/contactus">CONTACT</Button>
               </Stack>
               }
             </Paper>
