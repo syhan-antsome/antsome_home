@@ -6,7 +6,8 @@ import Stack from '@mui/material/Stack';
 import { makeStyles } from '@mui/styles';
 import Image from 'next/image';
 
-import Link from 'src/components/Link';
+import Link from 'next/link';
+
 import logo_gPng from "/public/images/logos/logo_g.png";
 
 const useStyles = makeStyles(theme => ({
@@ -56,31 +57,31 @@ export default function Footer() {
             marginRight: { xs: "10px", sm: "0px", md: "0px" },
             marginLeft: { xs: "0px", sm: "27px", md: "32px" },
             fontSize: { xs: "15px", sm: "17px", md: "21px" },
-          }} component={Link} noLinkStyle href="/privaterule">개인정보처리방침</Typography>
+          }} component={Link} href="/privaterule">개인정보처리방침</Typography>
         <Typography className={classes.foot_text}
           sx={{
             display: { xs: "none", sm: "block" },
             marginLeft: { xs: "10px", sm: "27px", md: "32px" },
             fontSize: { xs: "21px", sm: "17px", md: "21px" },
-          }} component={Link} noLinkStyle href="/contactus">CONTACT</Typography>
+          }} component={Link} href="/contactus">CONTACT</Typography>
         <Typography className={classes.foot_text}
           sx={{
             display: { xs: "none", sm: "block" },
             marginLeft: { xs: "10px", sm: "27px", md: "32px" },
             fontSize: { xs: "21px", sm: "17px", md: "21px" },
-          }} component={Link} noLinkStyle href="/recruit">RECRUIT</Typography>
+          }} component={Link} href="/recruit">RECRUIT</Typography>
         <Typography className={classes.foot_text}
           sx={{
             display: { xs: "none", sm: "block" },
             marginLeft: { xs: "10px", sm: "27px", md: "32px" },
             fontSize: { xs: "21px", sm: "17px", md: "21px" },
-          }} component={Link} noLinkStyle href="/projects">PROJECTS</Typography>
+          }} component={Link} href="/projects">PROJECTS</Typography>
         <Typography className={classes.foot_text}
           sx={{
             display: { xs: "none", sm: "block" },
             marginLeft: { xs: "10px", sm: "27px", md: "32px" },
             fontSize: { xs: "21px", sm: "17px", md: "21px" },
-          }} component={Link} noLinkStyle href="/aboutus">ABOUT US</Typography>
+          }} component={Link} href="/aboutus">ABOUT US</Typography>
       </Box>
 
       {/* 하단의 앤트썸 로고 */}

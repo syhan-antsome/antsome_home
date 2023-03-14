@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 
+import Link from 'next/link';
+
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-
-import Link from 'src/components/Link';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -94,19 +94,6 @@ const cultureMedia = [
   culture04Png,
   culture05Png
 ];
-
-// const IndexButton = styled(Button)`
-//   border: 2px solid #ffffff;
-//   color: #fff;
-//   font-weight: 700;
-//   background-color: #fff0;
-//   text-align: center;
-//   border-radius: 46px;
-//   &:hover {
-//     background-color: #ffffff;
-//     color: #0C254B;
-//   };
-//   `;
 
 export default function Index() {
   const classes = useStyles();
@@ -204,7 +191,7 @@ export default function Index() {
               textTransform: "lowercase",
               width: "120px", height: "48px",
               fontSize: "20px", padding: "13px 0",
-            }} component={Link} noLinkStyle href="/projects">more</Button>
+            }} component={Link} href="/projects">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -236,10 +223,10 @@ export default function Index() {
               afterChange: (current) => { setProjectMNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src={project01_mPng} alt="project01" />
-              <Image src={project02_mPng} alt="project02" />
-              <Image src={project03_mPng} alt="project03" />
-              <Image src={project04_mPng} alt="project04" />
+              <Image src={project01_mPng} alt="project01" style={{width: '100%', height: 'auto'}} />
+              <Image src={project02_mPng} alt="project02" style={{width: '100%', height: 'auto'}} />
+              <Image src={project03_mPng} alt="project03" style={{width: '100%', height: 'auto'}} />
+              <Image src={project04_mPng} alt="project04" style={{width: '100%', height: 'auto'}} />
             </Slider>
           </Box>
         </Box>
@@ -252,7 +239,7 @@ export default function Index() {
               textTransform: "lowercase",
               width: "120px", height: "48px",
               fontSize: "20px", padding: "13px 0",
-            }} component={Link} noLinkStyle href="/projects">more</Button>
+            }} component={Link} href="/projects">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -284,10 +271,10 @@ export default function Index() {
               afterChange: (current) => { setProjectTNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src={project01_tPng} alt="project01" />
-              <Image src={project02_tPng} alt="project02" />
-              <Image src={project03_tPng} alt="project03" />
-              <Image src={project04_tPng} alt="project04" />
+              <Image src={project01_tPng} alt="project01" style={{width: '100%', height: 'auto'}} />
+              <Image src={project02_tPng} alt="project02" style={{width: '100%', height: 'auto'}} />
+              <Image src={project03_tPng} alt="project03" style={{width: '100%', height: 'auto'}} />
+              <Image src={project04_tPng} alt="project04" style={{width: '100%', height: 'auto'}} />
             </Slider>
           </Box>
         </Box>
@@ -301,7 +288,7 @@ export default function Index() {
               height: { xs: "35px", sm: "47px", md: "70px" },
               fontSize: { xs: "12px", sm: "16px", md: "26px" },
               padding: { xs: "16px 0", sm: "13px 22px 10px 22px", md: "12px 30px 10px 30px" },
-            }} component={Link} noLinkStyle href="/projects">more</Button>
+            }} component={Link} href="/projects">more</Button>
           </Box>
           <Box style={{
             width: "100%", height: "100%", position: "absolute",
@@ -333,10 +320,10 @@ export default function Index() {
               afterChange: (current) => { setProjectWNo(current + 1); },
               cssEase: "linear",
             }}>
-              <Image src={project01_wPng} alt="project01" />
-              <Image src={project02_wPng} alt="project02" />
-              <Image src={project03_wPng} alt="project03" />
-              <Image src={project04_wPng} alt="project04" />
+              <Image src={project01_wPng} alt="project01" style={{width: '100%', height: 'auto'}} />
+              <Image src={project02_wPng} alt="project02" style={{width: '100%', height: 'auto'}} />
+              <Image src={project03_wPng} alt="project03" style={{width: '100%', height: 'auto'}} />
+              <Image src={project04_wPng} alt="project04" style={{width: '100%', height: 'auto'}} />
             </Slider>
           </Box>
         </Box>
@@ -378,7 +365,7 @@ export default function Index() {
                 <div style={{ display: 'flex' }}>
                   {cultureMedia.map((e, index) => (
                     <div key={index} style={{ position: 'relative', flex: '0 0 100%' }}>
-                      <Image src={e} alt="antsome culture" style={{ width: '100%', padding: '0px 20px' }} />
+                      <Image src={e} alt="antsome culture" style={{ width: '100%', height: 'auto', padding: '0px 20px' }} />
                     </div>
                   ))}
                 </div>
@@ -400,7 +387,7 @@ export default function Index() {
                 maxWidth: { xs: "335px", sm: "550px", md: "700px" },
                 marginTop: { xs: "80px", sm: "142px", md: "150px" }
               }}>
-                <Image src={mapPng} alt="약도" width="100%" />
+                <Image src={mapPng} alt="약도" style={{ width: '100%', height: 'auto' }} />
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -473,7 +460,7 @@ export default function Index() {
                 height: { xs: "35px", sm: "47px", md: "70px" },
                 fontSize: { xs: "12px", sm: "16px", md: "26px" },
                 padding: { xs: "16px 0", sm: "13px 22px 10px 22px", md: "12px 30px 10px 30px" },
-              }} component={Link} noLinkStyle href="/contactus">문의하기</Button>
+              }} component={Link} href="/contactus">문의하기</Button>
             </Box>
           </Box>
           <Box style={{ backgroundColor: "#00327E", borderRadius: 30, textAlign: "-webkit-left" }}
@@ -504,7 +491,7 @@ export default function Index() {
                 height: { xs: "35px", sm: "47px", md: "70px" },
                 fontSize: { xs: "12px", sm: "16px", md: "26px" },
                 padding: { xs: "16px 0", sm: "13px 22px 10px 22px", md: "12px 30px 10px 30px" },
-              }} component={Link} noLinkStyle href="/recruit#apply">지원하기</Button>
+              }} component={Link} href="/recruit#apply">지원하기</Button>
             </Box>
           </Box>
         </Box>

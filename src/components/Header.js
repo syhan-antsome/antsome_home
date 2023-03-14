@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+
 import Image from 'next/image';
 
 import Box from '@mui/material/Box';
@@ -13,7 +14,7 @@ import Typography from '@mui/material/Typography';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import Stack from '@mui/material/Stack';
-import Link from 'src/components/Link';
+import Link from 'next/link';
 
 import CancelIcon from '@mui/icons-material/Cancel';
 
@@ -21,87 +22,120 @@ import logo_wPng from "/public/images/logos/logo_w.png";
 import logo_bPng from "/public/images/logos/logo_b.png";
 import logo_tPng from "/public/images/logos/logo_t.png";
 
-const AntSmMenuBlackButton = styled(Button)`
-  color: #000;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -18px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: black;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
-
-const AntSmMenuWhiteButton = styled(Button)`
-  color: #fff;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-    color: #0C254B;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -18px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: #fff;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
-
-const AntMdMenuBlackButton = styled(Button)`
-  color: #000;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -32px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: black;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
+const useStyles = makeStyles(theme => ({
+  ant_md_menu_white_button: {
+    color: '#fff',
+    fontWeight: 'bold',
+    padding: '0',
+    borderRadius: '0',
+    marginLeft: '60px',
+    fontSize: '20px',
+    '&:hover': {
+      backgroundColor: 'transparent',
+      color: '#0C254B',
+    },
+    '&:before': {
+      position: 'absolute',
+      content: '""',
+      width: '0px',
+      height: '4px',
+      bottom: '-32px',
+      left: '50%',
+      transform: 'translate(-50%,0%)',
+      backgroundColor: '#fff',
+      transformOrigin: 'center',
+      visibility: 'hidden',
+      transition: 'all 0.5s ease-out',
+    },
+    '&:hover:before': {
+      visibility: 'visible',
+      width: '100%'
+    }
+  },
+  ant_md_menu_black_button: {
+    color: '#000',
+    fontWeight: 'bold',
+    padding: '0',
+    borderRadius: '0',
+    marginLeft: '60px',
+    fontSize: '20px',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&:before': {
+      position: 'absolute',
+      width: '0',
+      height: '4px',
+      bottom: '-32px',
+      left: '50%',
+      transform: 'translate(-50%,0%)',
+      backgroundColor: '#000',
+      transformOrigin: 'center',
+      visibility: 'hidden',
+      transition: 'all 0.5s ease-out',
+    },
+    '&:hover:before': {
+      visibility: 'visible',
+      width: '100%'
+    }
+  },
+  ant_sm_menu_white_button: {
+    color: '#fff',
+    fontWeight: 'bold',
+    padding: '0',
+    borderRadius: '0',
+    marginLeft: '40px',
+    fontSize: '18px',
+    '&:hover': {
+      backgroundColor: 'transparent',
+      color: '#0C254B',
+    },
+    '&:before': {
+      position: 'absolute',
+      width: '0',
+      height: '4px',
+      bottom: '-18px',
+      left: '50%',
+      transform: 'translate(-50%,0%)',
+      backgroundColor: '#fff',
+      transformOrigin: 'center',
+      visibility: 'hidden',
+      transition: 'all 0.5s ease-out',
+    },
+    '&:hover:before': {
+      visibility: 'visible',
+      width: '100%'
+    }
+  },
+  ant_sm_menu_black_button: {
+    color: '#000',
+    fontWeight: 'bold',
+    padding: '0',
+    borderRadius: '0',
+    marginLeft: '40px',
+    fontSize: '18px',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&:before': {
+      position: 'absolute',
+      width: '0',
+      height: '4px',
+      bottom: '-18px',
+      left: '50%',
+      transform: 'translate(-50%,0%)',
+      backgroundColor: '#000',
+      transformOrigin: 'center',
+      visibility: 'hidden',
+      transition: 'all 0.5s ease-out',
+    },
+    '&:hover:before': {
+      visibility: 'visible',
+      width: '100%'
+    }
+  },
+}));
+/*
 
 const AntMdMenuWhiteButton = styled(Button)`
   color: #fff;
@@ -131,7 +165,120 @@ const AntMdMenuWhiteButton = styled(Button)`
   }
 `;
 
+const Button = styled(Button)`
+  color: #000;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 0;
+  &:hover {
+    background-color: transparent;
+  };
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -18px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    background-color: black;
+    transform-origin: center;
+    visibility: hidden;
+    transition: all 0.5s ease-out;
+  };
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+`;
+
+const Button = styled(Button)`
+  color: #fff;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 0;
+  &:hover {
+    background-color: transparent;
+    color: #0C254B;
+  };
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -18px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    background-color: #fff;
+    transform-origin: center;
+    visibility: hidden;
+    transition: all 0.5s ease-out;
+  };
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+`;
+
+const Button = styled(Button)`
+  color: #000;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 0;
+  &:hover {
+    background-color: transparent;
+  };
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -32px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    background-color: black;
+    transform-origin: center;
+    visibility: hidden;
+    transition: all 0.5s ease-out;
+  };
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+`;
+
+const AntMdMenuWhiteButton = (Button)`
+  color: #fff;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 0;
+  &:hover {
+    background-color: transparent;
+    color: #0C254B;
+  };
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -32px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    background-color: #fff;
+    transform-origin: center;
+    visibility: hidden;
+    transition: all 0.5s ease-out;
+  };
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+`;
+*/
+
+
 export default function Header(props) {
+  const classes = useStyles();
 
   const isWhite = props.isWhite ? props.isWhite : false;
   const borderStyle = isWhite ? { borderBottom: "1px solid #fff", position: "absolute", top: "0px", width: "100%" } :
@@ -161,7 +308,7 @@ export default function Header(props) {
           padding: "0px 20px"
         }}>
           <Box style={{ display: "flex", justifyContent: "space-between" }}>
-            <Box onClick={toggleDrawer(anchor, false)} component={Link} noLinkStyle href={"/"}>
+            <Box onClick={toggleDrawer(anchor, false)} component={Link} href={"/"}>
               <Image src={logo_tPng} alt="antsome" style={{ marginTop: 26, width: '100%', height: '14px' }} />
             </Box>
             <CancelIcon style={{ marginTop: "15px", color: "#fff", fontSize: "40px" }} onClick={toggleDrawer(anchor, false)}></CancelIcon>
@@ -175,7 +322,7 @@ export default function Header(props) {
         >
           {[['ABOUT US', '/aboutus'], ['PROJECTS', '/projects'], ['RECRUIT', '/recruit'], ['CONTACT', '/contactus']].map((m, index) => (
             <Box key={index} style={{ borderBottom: "2px solid #fff", height: "67px", paddingTop: "16px" }}>
-              <Box style={{ width: "100%" }} component={Link} noLinkStyle href={m[1]}>
+              <Box style={{ width: "100%" }} component={Link} href={m[1]}>
                 <Typography
                   style={{
                     marginLeft: "20px",
@@ -258,88 +405,36 @@ export default function Header(props) {
             </Paper>
             <Paper elevation={0} style={{ border: 0, backgroundColor: "#ffffff00" }}
               sx={{ display: { xs: 'none', sm: 'block', md: 'none' } }}>
-              {isWhite &&
-                <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                  <AntSmMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/aboutus">ABOUT US</AntSmMenuWhiteButton>
-                  <AntSmMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/projects">PROJECTS</AntSmMenuWhiteButton>
-                  <AntSmMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/recruit">RECRUIT</AntSmMenuWhiteButton>
-                  <AntSmMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/contactus">CONTACT</AntSmMenuWhiteButton>
-                </Stack>
+              {isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Link className={classes.ant_sm_menu_white_button} href="/aboutus">ABOUT US</Link>
+                <Link className={classes.ant_sm_menu_white_button} href="/projects">PROJECTS</Link>
+                <Link className={classes.ant_sm_menu_white_button} href="/recruit">RECRUIT</Link>
+                <Link className={classes.ant_sm_menu_white_button} href="/contactus">CONTACT</Link>
+              </Stack>
               }
-              {!isWhite &&
-                <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                  <AntSmMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/aboutus">ABOUT US</AntSmMenuBlackButton>
-                  <AntSmMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/projects">PROJECTS</AntSmMenuBlackButton>
-                  <AntSmMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/recruit">RECRUIT</AntSmMenuBlackButton>
-                  <AntSmMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/contactus">CONTACT</AntSmMenuBlackButton>
-                </Stack>
+              {!isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Link className={classes.ant_sm_menu_black_button} href="/aboutus">ABOUT US</Link>
+                <Link className={classes.ant_sm_menu_black_button} href="/projects">PROJECTS</Link>
+                <Link className={classes.ant_sm_menu_black_button} href="/recruit">RECRUIT</Link>
+                <Link className={classes.ant_sm_menu_black_button} href="/contactus">CONTACT</Link>
+              </Stack>
               }
             </Paper>
-            <Paper elevation={0} style={{ border: 0, backgroundColor: "#ffffff00" }}
+            <Paper elevation={0} style={{ border: 3, backgroundColor: "#ffffff00" }}
               sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-              {isWhite &&
-                <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                  <AntMdMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/aboutus">ABOUT US</AntMdMenuWhiteButton>
-                  <AntMdMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/projects">PROJECTS</AntMdMenuWhiteButton>
-                  <AntMdMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/recruit">RECRUIT</AntMdMenuWhiteButton>
-                  <AntMdMenuWhiteButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/contactus">CONTACT</AntMdMenuWhiteButton>
-                </Stack>
+              {isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Button className={classes.ant_md_menu_white_button} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_md_menu_white_button} component={Link} href="/projects">PROJECTS</Button>
+                <Button className={classes.ant_md_menu_white_button} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_md_menu_white_button} component={Link} href="/contactus">CONTACT</Button>
+              </Stack>
               }
-              {!isWhite &&
-                <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                  <AntMdMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/aboutus">ABOUT US</AntMdMenuBlackButton>
-                  <AntMdMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/projects">PROJECTS</AntMdMenuBlackButton>
-                  <AntMdMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/recruit">RECRUIT</AntMdMenuBlackButton>
-                  <AntMdMenuBlackButton disableRipple={true} sx={{
-                    marginLeft: { sm: "40px", md: "60px" },
-                    fontSize: { sm: "18px", md: "20px" }
-                  }} component={Link} noLinkStyle href="/contactus">CONTACT</AntMdMenuBlackButton>
-                </Stack>
+              {!isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
+                <Link className={classes.ant_md_menu_black_button} href="/aboutus">ABOUT US</Link>
+                <Link className={classes.ant_md_menu_black_button} href="/projects">PROJECTS</Link>
+                <Link className={classes.ant_md_menu_black_button} href="/recruit">RECRUIT</Link>
+                <Link className={classes.ant_md_menu_black_button} href="/contactus">CONTACT</Link>
+              </Stack>
               }
             </Paper>
           </Grid>
