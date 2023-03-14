@@ -267,7 +267,7 @@ export default function Recruit() {
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
                   padding: { xs: "16px 0", sm: "11px 22px 10px 22px", md: "13px 30px 10px 30px" },
-                }} component={Link} noLinkStyle href="/aboutus#team1">자세히보기</Button>
+                }} component={Link} href="/aboutus#team1">자세히보기</Button>
                 <Box sx={{
                   width: { xs: "10px", sm: "14px", md: "14px" },
                 }}></Box>
@@ -276,7 +276,7 @@ export default function Recruit() {
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
                   padding: { xs: "16px 0", sm: "11px 22px 10px 22px", md: "13px 30px 10px 30px" },
-                }} component={Link} noLinkStyle href="#apply">지원하기</Button>
+                }} component={Link} href="#apply">지원하기</Button>
               </Box>
             </Box>
             <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }} sx={{
@@ -313,7 +313,7 @@ export default function Recruit() {
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
                   padding: { xs: "16px 0", sm: "11px 22px 10px 22px", md: "13px 30px 10px 30px" },
-                }} component={Link} noLinkStyle href="/aboutus#team2">자세히보기</Button>
+                }} component={Link} href="/aboutus#team2">자세히보기</Button>
                 <Box sx={{
                   width: { xs: "14px", sm: "14px", md: "14px" },
                 }}></Box>
@@ -322,7 +322,7 @@ export default function Recruit() {
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
                   padding: { xs: "16px 0", sm: "11px 22px 10px 22px", md: "13px 30px 10px 30px" },
-                }} component={Link} noLinkStyle href="#apply">지원하기</Button>
+                }} component={Link} href="#apply">지원하기</Button>
               </Box>
             </Box>
             <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }} sx={{
@@ -357,7 +357,7 @@ export default function Recruit() {
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
                   padding: { xs: "16px 0", sm: "11px 22px 10px 22px", md: "13px 30px 10px 30px" },
-                }} component={Link} noLinkStyle href="/aboutus#team3">자세히보기</Button>
+                }} component={Link} href="/aboutus#team3">자세히보기</Button>
                 <Box sx={{
                   width: { xs: "14px", sm: "14px", md: "14px" },
                 }}></Box>
@@ -366,7 +366,7 @@ export default function Recruit() {
                   height: { xs: "46px", sm: "41px", md: "62px" },
                   fontSize: { xs: "14px", sm: "13px", md: "20px" },
                   padding: { xs: "16px 0", sm: "11px 22px 10px 22px", md: "13px 30px 10px 30px" },
-                }} component={Link} noLinkStyle href="#apply">지원하기</Button>
+                }} component={Link} href="#apply">지원하기</Button>
               </Box>
             </Box>
           </Box>
@@ -492,7 +492,7 @@ export default function Recruit() {
             }}>
               <Box sx={{
                 width: { xs: "130px", sm: "180px", md: "250px" },
-              }}><Image src={benefit01Png} alt="업무 몰입을 위한 지원" style={{width: '100%', height: '100%'}} /></Box>
+              }}><Image src={benefit04Png} alt="업무 몰입을 위한 지원" style={{width: '100%', height: '100%'}} /></Box>
               <Box sx={{
                 width: { xs: "210px", sm: "230px", md: "290px" },
                 marginLeft: { xs: "48px", sm: "50px", md: "99px" }

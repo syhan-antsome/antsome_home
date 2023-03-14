@@ -107,7 +107,7 @@ const getProjectCard = (pImg, propObj, index, st) => {
               width: { xs: "120px", sm: "177px", md: "268px" }, 
               height: { xs: "32px", sm: "47px", md: "70px" }, 
             }}
-          component={Link} noLinkStyle href={propObj.infoUrl}>Information</Button>
+          component={Link} href={propObj.infoUrl}>Information</Button>
           }
           {propObj.isExist && propObj.appButton &&
             <Button className={st}
@@ -117,7 +117,7 @@ const getProjectCard = (pImg, propObj, index, st) => {
               height: { xs: "38px", sm: "46px", md: "70px" },
               marginRight: { xs: "6px", sm: "7px", md: "10px" },
             }}
-            component={Link} noLinkStyle href={propObj.appUrl}>APP</Button>
+            component={Link} href={propObj.appUrl}>APP</Button>
           }
           {propObj.isExist && propObj.webButton &&
             <Button className={st}
@@ -127,7 +127,7 @@ const getProjectCard = (pImg, propObj, index, st) => {
               height: { xs: "38px", sm: "46px", md: "70px" }, 
               marginRight: { xs: "6px", sm: "7px", md: "10px" },
             }}
-            component={Link} noLinkStyle href={propObj.webUrl}>WEB</Button>
+            component={Link} href={propObj.webUrl}>WEB</Button>
           }
         </Box>
       </Box>

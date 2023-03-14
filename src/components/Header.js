@@ -138,147 +138,6 @@ const useStyles = makeStyles(theme => ({
     }
   },
 }));
-/*
-
-const AntMdMenuWhiteButton = styled(Button)`
-  color: #fff;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-    color: #0C254B;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -32px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: #fff;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
-
-const Button = styled(Button)`
-  color: #000;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -18px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: black;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
-
-const Button = styled(Button)`
-  color: #fff;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-    color: #0C254B;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -18px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: #fff;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
-
-const Button = styled(Button)`
-  color: #000;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -32px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: black;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
-
-const AntMdMenuWhiteButton = (Button)`
-  color: #fff;
-  font-weight: bold;
-  padding: 0;
-  border-radius: 0;
-  &:hover {
-    background-color: transparent;
-    color: #0C254B;
-  };
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -32px;
-    left: 50%;
-    transform: translate(-50%,0%);
-    background-color: #fff;
-    transform-origin: center;
-    visibility: hidden;
-    transition: all 0.5s ease-out;
-  };
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
-  }
-`;
-*/
-
 
 export default function Header(props) {
   const classes = useStyles();
@@ -409,17 +268,17 @@ export default function Header(props) {
             <Paper elevation={0} style={{ border: 0, backgroundColor: "#ffffff00" }}
               sx={{ display: { xs: 'none', sm: 'block', md: 'none' } }}>
               {isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                <Link className={classes.ant_sm_menu_white_button} href="/aboutus">ABOUT US</Link>
-                <Link className={classes.ant_sm_menu_white_button} href="/projects">PROJECTS</Link>
-                <Link className={classes.ant_sm_menu_white_button} href="/recruit">RECRUIT</Link>
-                <Link className={classes.ant_sm_menu_white_button} href="/contactus">CONTACT</Link>
+                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/projects">PROJECTS</Button>
+                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_sm_menu_white_button} component={Link} href="/contactus">CONTACT</Button>
               </Stack>
               }
               {!isWhite && <Stack direction="row" justifyContent="flex-end" alignItems="flex-start" spacing={0} >
-                <Link className={classes.ant_sm_menu_black_button} href="/aboutus">ABOUT US</Link>
-                <Link className={classes.ant_sm_menu_black_button} href="/projects">PROJECTS</Link>
-                <Link className={classes.ant_sm_menu_black_button} href="/recruit">RECRUIT</Link>
-                <Link className={classes.ant_sm_menu_black_button} href="/contactus">CONTACT</Link>
+                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/aboutus">ABOUT US</Button>
+                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/projects">PROJECTS</Button>
+                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/recruit">RECRUIT</Button>
+                <Button className={classes.ant_sm_menu_black_button} component={Link} href="/contactus">CONTACT</Button>
               </Stack>
               }
             </Paper>

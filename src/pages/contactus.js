@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { styled } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -17,35 +17,36 @@ import callPng from "public/images/call.png";
 import companyPng from "public/images/company.png";
 import emailPng from "public/images/email.png";
 
-const MyComponent = styled(Button)`
-border: 2px solid #0C254B;
-padding: 10px 30px 10px 30px;
-color: #fff;
-font-weight: 800;
-background-color: #0C254B;
-border-radius: 46px;
-margin-right: 20px;
-&:hover {˜
-  background-color: #fff;
-  color: #0C254B;
-},
-`;
-
-const InputComponent = styled(OutlinedInput)`
-padding: 0;
-font-weight: 800;
-width: 100%;
-height: 100%;
-border-radius: 10px;
-margin-right: 20px;
-align-items: start;
-& .MuiOutlinedInput-root input: {
-  padding: 100px;
-};
-& .MuiOutlinedInput-input: {
-  padding: 100px;
-}
-`;
+const useStyles = makeStyles(theme => ({
+  send_button: {
+    border: '2px solid #0C254B',
+    padding: '10px 30px 10px 30px',
+    color: '#fff',
+    fontWeight: '800',
+    backgroundColor: '#0C254B',
+    marginRight: '20px',
+    borderRadius: '46px',
+    '&:hover': {
+      backgroundColor: '#ffffff',
+      color: '#0C254B'
+    }
+  },
+  ant_input: {
+    padding: '0px',
+    fontWeight: '800',
+    width: '100%',
+    height: '100%',
+    borderRadius: '10px',
+    marginRight: '20px',
+    alignItems: 'start',
+    '& .MuiOutlinedInput-root input': {
+      padding: '100px',
+    },
+    '& .MuiOutlinedInput-input': {
+      padding: '100px',
+    },
+  }
+}));
 
 const EmailValidation = (enteredEmail) => {
   const mail_format = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -57,7 +58,7 @@ const EmailValidation = (enteredEmail) => {
 }
 
 export default function ContactUs() {
-
+  const classes = useStyles();
   // email
   const [email, setEmail] = useState('');
   // title
@@ -242,7 +243,7 @@ export default function ContactUs() {
                     width: { xs: "295px", sm: "429px", md: "650px" },
                     height: { xs: "36px", sm: "53px", md: "80px" },
                   }}>
-                  <InputComponent type="email" placeholder="email" value={email}
+                  <OutlinedInput className={classes.ant_input} type="email" placeholder="email" value={email}
                     inputProps={{ style: { padding: "3%" } }}
                     onChange={handleChangeEmail} sx={{
                       fontSize: { xs: "13px", sm: "16px", md: "18px" },
@@ -253,7 +254,7 @@ export default function ContactUs() {
                     width: { xs: "295px", sm: "429px", md: "650px" },
                     height: { xs: "36px", sm: "53px", md: "80px" },
                   }}>
-                  <InputComponent placeholder="subject" value={title}
+                  <OutlinedInput className={classes.ant_input}  placeholder="subject" value={title}
                     inputProps={{ style: { padding: "3%" } }}
                     onChange={handleChangeTitle} sx={{
                       fontSize: { xs: "13px", sm: "16px", md: "18px" },
@@ -264,7 +265,7 @@ export default function ContactUs() {
                     width: { xs: "295px", sm: "429px", md: "650px" },
                     height: { xs: "113px", sm: "165px", md: "250px" },
                   }}>
-                  <InputComponent placeholder="message" value={content}
+                  <OutlinedInput className={classes.ant_input}  placeholder="message" value={content}
                     multiline={true}
                     inputProps={{ style: { padding: "3%" } }}
                     onChange={handleChangeContent} sx={{
@@ -272,14 +273,14 @@ export default function ContactUs() {
                     }} />
                 </Box>
               </Box>
-              <MyComponent style={{ textTransform: "lowercase" }} sx={{
+              <Button className={classes.send_button} sx={{
                 width: { xs: "119px", sm: "119px", md: "180px" },
                 height: { xs: "46px", sm: "46px", md: "70px" },
                 marginTop: { xs: "50px", sm: "50px", md: "81px" },
                 marginLeft: { xs: "0px", sm: "300px", md: "455px" },
                 fontSize: { xs: "16px", sm: "16px", md: "25px" },
               }}
-                onClick={handleClickCreateInquire}>send</MyComponent>
+                onClick={handleClickCreateInquire}>send</Button>
             </Box>
           </Box>
         </Box>
