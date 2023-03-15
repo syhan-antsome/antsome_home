@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 
-export const RC_DOMAIN = process.env.NODE_ENV === 'production' ? `${process.env.NEXT_PUBLIC_WEBCONTEXT_BASEURL}/` : `http://localhost:3010${process.env.NEXT_PUBLIC_WEBCONTEXT_BASEURL}/`;
+export const RC_DOMAIN = '//www.antsome.com:8030/home/';// process.env.NODE_ENV === 'production' ? `${process.env.NEXT_PUBLIC_WEBCONTEXT_BASEURL}/` : `http://localhost:3010${process.env.NEXT_PUBLIC_WEBCONTEXT_BASEURL}/`;
 // export const RC_DOMAIN = process.env.NODE_ENV === 'production' ? `${process.env.NEXT_PUBLIC_WEBCONTEXT_BASEURL}/` : `http://localhost:8082${process.env.NEXT_PUBLIC_WEBCONTEXT_BASEURL}/`;
 
 export function rcRequestPromise(url, param) {

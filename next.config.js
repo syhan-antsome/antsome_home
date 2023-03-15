@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  trailingSlash: true
+  trailingSlash: true,
+  async rewrites() {
+    return [
+      {
+        source: "/:path*",
+        destination: "https://antsome.com:3010/home/:path*",
+      },
+    ];
+  },
 }
 module.exports = nextConfig
