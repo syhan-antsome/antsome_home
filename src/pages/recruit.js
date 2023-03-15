@@ -243,7 +243,7 @@ export default function Recruit() {
             <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }} sx={{
               width: { xs: "335px", sm: "297px", md: "450px" },
               height: { xs: "343px", sm: "304px", md: "460px" },
-              background: { xs: "url('images/team/re_service_m.png') no-repeat", sm: "url('images/team/re_service_t.png') no-repeat", md: "url('images/team/re_service.png') no-repeat" },
+              background: { xs: "url('/images/team/re_service_m.png') no-repeat", sm: "url('/images/team/re_service_t.png') no-repeat", md: "url('/images/team/re_service.png') no-repeat" },
             }}>
               <Box>
                 <Typography style={{ textAlign: "left", fontWeight: "bold", color: "#fff" }} sx={{
@@ -286,7 +286,7 @@ export default function Recruit() {
             <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }} sx={{
               width: { xs: "335px", sm: "297px", md: "450px" },
               height: { xs: "343px", sm: "304px", md: "460px" },
-              background: { xs: "url('images/team/re_platform_m.png') no-repeat", sm: "url('images/team/re_platform_t.png') no-repeat", md: "url('images/team/re_platform.png') no-repeat" },
+              background: { xs: "url('/images/team/re_platform_m.png') no-repeat", sm: "url('/images/team/re_platform_t.png') no-repeat", md: "url('/images/team/re_platform.png') no-repeat" },
               marginTop: { xs: "10px", sm: "0px", md: "0px" },
               marginLeft: { xs: "0px", sm: "16px", md: "25px" },
               marginRight: { xs: "0px", sm: "16px", md: "25px" },
@@ -332,7 +332,7 @@ export default function Recruit() {
             <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }} sx={{
               width: { xs: "335px", sm: "297px", md: "450px" },
               height: { xs: "343px", sm: "304px", md: "460px" },
-              background: { xs: "url('images/team/re_brand_m.png') no-repeat", sm: "url('images/team/re_brand_t.png') no-repeat", md: "url('images/team/re_brand.png') no-repeat" },
+              background: { xs: "url('/images/team/re_brand_m.png') no-repeat", sm: "url('/images/team/re_brand_t.png') no-repeat", md: "url('/images/team/re_brand.png') no-repeat" },
               marginTop: { xs: "10px", sm: "0px", md: "0px" },
             }}>
               <Box>
