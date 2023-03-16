@@ -1,0 +1,31 @@
+
+앤트썸 홈페이지 관리
+
+1. 프론트엔드는 nextjs 를 사용하여 개발
+2. 백엔드는 node 서버를 이용함.
+
+[ 프론트엔드 빌드 ]
+
+1. 수정작업후 빌드-익스포트 실행
+    "build": "next build && next export"
+2. ./out 폴더에 파일 생성됨
+
+3. out 폴더에서 tar로 묶는다.
+    tar -zcvf antsome_v20.tar.gz *
+
+4. 약 141메가짜리 tar 파일 생성 됨.
+
+5. 서버에 전송
+   운영서버 위치 : /service/source/anthome
+   (폴더이름 조심 !!! antsome은 백엔드, anthome은 프론트엔드)
+
+6. 위 폴더에 파일 모두 삭제하고 4번에서 만들어진 tar 파일을 압축해제한다.
+
+
+
+
+
+
+
+
+
