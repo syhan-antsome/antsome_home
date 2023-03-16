@@ -53,7 +53,7 @@ const getMemberFlipCard = (pImg, propObj) => {
           marginTop: { xs: "0px", sm: "0px", md: "26px" },
           marginLeft: { xs: "34px", sm: "36px", md: "56px" },
           width: { xs: "110px", sm: "160px", md: "250px" },
-        }}><Image src={pImg} alt={propObj.name} style={{ width: '100%', height: '100%' }} /></Box>
+        }}><Image src={pImg} alt={propObj.name} style={{ width: '100%', height: 'auto' }} /></Box>
       </Paper>
     </FrontSide>
     <BackSide style={{ padding: "0px", borderRadius: "15px" }}>
@@ -143,7 +143,7 @@ const getManagerFlipCard = (pImg, propObj) => {
             marginTop: { xs: "-45px", sm: "-80px", md: "-100px" },
             marginLeft: { xs: "12px", sm: "0px", md: "0px" },
             width: { xs: "100px", sm: "180px", md: "250px" },
-          }}><Image src={pImg} alt={propObj.name} style={{ width: '100%', height: '100%' }} /></Box>
+          }}><Image src={pImg} alt={propObj.name} style={{ width: '100%', height: 'auto' }} /></Box>
         </Box>
       </Paper>
     </FrontSide>
@@ -264,7 +264,7 @@ export default function AboutUs() {
           <Box sx={{
             width: { xs: "335px", sm: "650px", md: "1000px" },
             marginTop: { xs: "-130px", sm: "-208px", md: "-310px" }
-          }}><Image src={aboutPng} alt="회사이미지" /></Box>
+          }}><Image src={aboutPng} alt="회사이미지" style={{ width: '100%', height: 'auto' }} /></Box>
 
           {/* 그들과의 썸 - TITLE */}
           <Typography style={{

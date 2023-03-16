@@ -411,7 +411,7 @@ export default function Recruit() {
               <Box sx={{
                 width: { xs: "130px", sm: "180px", md: "250px" },
                 marginLeft: { xs: "0px", sm: "0px", md: "0px" }
-              }}><Image src={benefit01Png} alt="자유로운 근무환경" style={{width: '100%', height: '100%'}} /></Box>
+              }}><Image src={benefit01Png} alt="자유로운 근무환경" style={{width: '100%', height: 'auto'}} /></Box>
               <Box sx={{
                 width: { xs: "210px", sm: "265px", md: "290px" },
                 marginLeft: { xs: "48px", sm: "50px", md: "99px" },
@@ -438,7 +438,7 @@ export default function Recruit() {
             }}>
               <Box sx={{
                 width: { xs: "130px", sm: "180px", md: "250px" },
-              }}><Image src={benefit02Png} alt="성장을 위한 지원" style={{width: '100%', height: '100%'}} /></Box>
+              }}><Image src={benefit02Png} alt="성장을 위한 지원" style={{width: '100%', height: 'auto'}} /></Box>
               <Box sx={{
                 width: { xs: "210px", sm: "230px", md: "290px" },
                 marginLeft: { xs: "48px", sm: "50px", md: "99px" }
@@ -470,7 +470,7 @@ export default function Recruit() {
               <Box sx={{
                 width: { xs: "130px", sm: "180px", md: "250px" },
                 marginLeft: { xs: "0px", sm: "0px", md: "0px" }
-              }}><Image src={benefit03Png} alt="즐겁게 일하는 환경" style={{width: '100%', height: '100%'}} /></Box>
+              }}><Image src={benefit03Png} alt="즐겁게 일하는 환경" style={{width: '100%', height: 'auto'}} /></Box>
               <Box sx={{
                 width: { xs: "210px", sm: "265px", md: "290px" },
                 marginLeft: { xs: "48px", sm: "50px", md: "99px" },
@@ -496,7 +496,7 @@ export default function Recruit() {
             }}>
               <Box sx={{
                 width: { xs: "130px", sm: "180px", md: "250px" },
-              }}><Image src={benefit04Png} alt="업무 몰입을 위한 지원" style={{width: '100%', height: '100%'}} /></Box>
+              }}><Image src={benefit04Png} alt="업무 몰입을 위한 지원" style={{width: '100%', height: 'auto'}} /></Box>
               <Box sx={{
                 width: { xs: "210px", sm: "230px", md: "290px" },
                 marginLeft: { xs: "48px", sm: "50px", md: "99px" }
@@ -555,7 +555,7 @@ export default function Recruit() {
           }}>
           <Box sx={{
             width: { xs: "18px", sm: "156px", md: "224px" },
-          }}><Image src={process01Png} alt="입사지원" style={{width: '100%', height: '70%'}} />
+          }}><Image src={process01Png} alt="입사지원" style={{width: '100%', height: 'auto'}} />
             <Typography style={{
               color: "#0C254B"
             }} sx={{
@@ -566,7 +566,7 @@ export default function Recruit() {
           <Box sx={{ width: { xs: "14px", sm: "43px", md: "62px" }, }}></Box>
           <Box sx={{
             width: { xs: "18px", sm: "156px", md: "224px" },
-          }}><Image src={process02Png} alt="서류전형" style={{width: '100%', height: '70%'}} />
+          }}><Image src={process02Png} alt="서류전형" style={{width: '100%', height: 'auto'}} />
             <Typography style={{
               color: "#0C254B"
             }} sx={{
@@ -577,7 +577,7 @@ export default function Recruit() {
           <Box sx={{ width: { xs: "14px", sm: "43px", md: "62px" }, }}></Box>
           <Box sx={{
             width: { xs: "18px", sm: "156px", md: "224px" },
-          }}><Image src={process03Png} alt="면접" style={{width: '100%', height: '70%'}} />
+          }}><Image src={process03Png} alt="면접" style={{width: '100%', height: 'auto'}} />
             <Typography style={{
               color: "#0C254B"
             }} sx={{
@@ -588,7 +588,7 @@ export default function Recruit() {
           <Box sx={{ width: { xs: "14px", sm: "43px", md: "62px" }, }}></Box>
           <Box sx={{
             width: { xs: "18px", sm: "156px", md: "224px" },
-          }}><Image src={process04Png} alt="최종합격" style={{width: '100%', height: '70%'}} />
+          }}><Image src={process04Png} alt="최종합격" style={{width: '100%', height: 'auto'}} />
             <Typography style={{
               color: "#0C254B"
             }} sx={{

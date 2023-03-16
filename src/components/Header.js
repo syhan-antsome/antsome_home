@@ -246,10 +246,10 @@ export default function Header(props) {
               width: { xs: "100px", sm: "180px", md: "265px" }
             }}><Link href="/" color="primary">
                 {whiteBtn &&
-                  <Image src={logo_wPng} alt="antsome" width="100%" />
+                  <Image src={logo_wPng} alt="antsome" style={{width: '100%', height: 'auto'}} />
                 }
                 {!whiteBtn &&
-                  <Image src={logo_bPng} alt="antsome" width="100%" />
+                  <Image src={logo_bPng} alt="antsome" style={{width: '100%', height: 'auto'}} />
                 }
               </Link>
             </Box>

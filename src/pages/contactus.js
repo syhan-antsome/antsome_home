@@ -190,15 +190,15 @@ export default function ContactUs() {
                   <Box sx={{
                     paddingTop: { xs: "0px", sm: "35px", md: "35px" },
                     width: { xs: "18px", sm: "23px", md: "35px" }
-                  }}><Image src={companyPng} alt="회사주소" style={{width: '100%', height: '100%'}} /></Box>
+                  }}><Image src={companyPng} alt="회사주소" style={{width: '100%', height: 'auto'}} /></Box>
                   <Box sx={{
                     paddingTop: { xs: "21px", sm: "28px", md: "45px" },
                     width: { xs: "18px", sm: "23px", md: "35px" }
-                  }}><Image src={emailPng} alt="회사 이메일 주소" style={{width: '100%', height: '100%'}} /></Box>
+                  }}><Image src={emailPng} alt="회사 이메일 주소" style={{width: '100%', height: 'auto'}} /></Box>
                   <Box sx={{
                     paddingTop: { xs: "22px", sm: "28px", md: "25px" },
                     width: { xs: "18px", sm: "23px", md: "35px" }
-                  }}><Image src={callPng} alt="회사 전화번호" style={{width: '100%', height: '100%'}} /></Box>
+                  }}><Image src={callPng} alt="회사 전화번호" style={{width: '100%', height: 'auto'}} /></Box>
                 </Box>
                 <Box style={{
                   color: "#fff",
