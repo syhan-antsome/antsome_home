@@ -2,7 +2,9 @@
 앤트썸 홈페이지 관리
 
 1. 프론트엔드는 nextjs 를 사용하여 개발
+    : git@github.com:syhan-antsome/antsome_home.git
 2. 백엔드는 node 서버를 이용함.
+    : git@github.com:antsomePDT/antsome-homepage.git
 
 [ 프론트엔드 빌드 ]
 
@@ -21,6 +23,7 @@
 
 6. 위 폴더에 파일 모두 삭제하고 4번에서 만들어진 tar 파일을 압축해제한다.
 
+7. 위 폴더는 아파치에서 antsome 의 document root 로 되어 바로 서비스 됨.
 
 
 
