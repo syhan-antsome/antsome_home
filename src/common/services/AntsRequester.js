@@ -63,7 +63,7 @@ export function requestPostAPI(url, param, temp) {
   // });
 }
 
-export function requestPostWidthJsonAPI(url, param) {
+export function requestPostWithJsonAPI(url, param) {
   return axios({
     method: 'post',
     url: RC_DOMAIN + url,

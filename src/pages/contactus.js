@@ -10,7 +10,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 
-import { requestPostWidthJsonAPI } from 'src/common/services/AntsRequester';
+import { requestPostWithJsonAPI } from 'src/common/services/AntsRequester';
 
 import Image from 'next/image';
 import callPng from "public/images/call.png";
@@ -102,7 +102,7 @@ export default function ContactUs() {
       return;
     }
 
-    requestPostWidthJsonAPI('setInquireDataCreate', {
+    requestPostWithJsonAPI('setInquireDataCreate', {
       "title": title,
       "email": email,
       "content": content
