@@ -7,9 +7,9 @@ const nextConfig = {
   trailingSlash: true,
   async rewrites() {
     return [
-      {
-        source: "/:path*",
-        destination: "https://antsome.com:3010/home/:path*",
+      { 
+        source: "/home/:path*",
+        destination: "http://localhost:3010/home/:path*",
       },
     ];
   },
