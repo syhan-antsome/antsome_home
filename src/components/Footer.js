@@ -105,7 +105,9 @@ export default function Footer() {
           marginTop: { xs: "8px", sm: "32px", md: "35px" }
         }}>
           <Typography sx={{ fontSize: { xs: "11px", sm: "18px", md: "20px" } }}>서울특별시 구로구 디지털로 288, 511호(구로동, 대륭포스트타워 1차)</Typography>
-          <Typography sx={{ fontSize: { xs: "11px", sm: "18px", md: "20px" } }}>대표: 박경호 &nbsp; | &nbsp; 연락처: 02-2135-5538 &nbsp; | &nbsp; 이메일: service@antsome.com</Typography>
+          <Typography sx={{ display: { xs: "none", sm: "block" }, fontSize: { xs: "11px", sm: "18px", md: "20px" } }}>대표: 박경호 &nbsp; | &nbsp; 연락처: 02-2135-5538 &nbsp; | &nbsp; 이메일: service@antsome.com &nbsp; | &nbsp; 사업자번호: 679-88-00065</Typography>
+          <Typography sx={{ display: { xs: "block", sm: "none" }, fontSize: { xs: "11px", sm: "18px", md: "20px" } }}>대표: 박경호 &nbsp; | &nbsp; 연락처: 02-2135-5538</Typography>
+          <Typography sx={{ display: { xs: "block", sm: "none" }, fontSize: { xs: "11px", sm: "18px", md: "20px" } }}>이메일: service@antsome.com &nbsp; | &nbsp; 사업자번호: 679-88-00065</Typography>
           <Typography sx={{ fontSize: { xs: "11px", sm: "18px", md: "20px" } }}>Copyright ⓒ Antsome All Rights Reserved.</Typography>
         </Box>
       </Box>
